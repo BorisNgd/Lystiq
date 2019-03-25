@@ -211,7 +211,7 @@
             <RelativeLayout
                 android:id="@+id/autoLocationLay"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="5dp"
                 android:layout_marginEnd="15dp"
@@ -220,13 +220,14 @@
                 android:background="@drawable/home_location_bg1"
                 android:elevation="4dp"
                 android:layoutDirection="@string/layout_direction"
-                android:padding="10dp"
                 app:layout_anchorGravity="bottom|center_horizontal"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-5dp"
+                    android:layout_marginBottom="-5dp"
                     android:id="@+id/locationLay1">
                     <ImageView
                         android:id="@+id/searchIcon"
@@ -238,28 +239,8 @@
                         android:tint="@color/primaryText"
                         android:src="@drawable/search" />
 
-                    <!--<AutoCompleteTextView-->
-                        <!--android:id="@+id/autoCompleteTextView"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:background="@color/white"-->
-                        <!--android:layout_alignParentLeft="true"-->
-                        <!--android:layout_marginStart="35dp"-->
-                        <!--android:layout_toStartOf="@+id/iconLay"-->
-                        <!--android:layout_toEndOf="@+id/searchIcon"-->
-                        <!--android:layout_centerVertical="true"-->
-                        <!--android:ems="10"-->
-                        <!--android:imeOptions="actionSearch"-->
-                        <!--android:text=""-->
-                        <!--android:hint="@string/world_wide"-->
-                        <!--android:dropDownAnchor="@id/autoLocationLay"-->
-                        <!--android:dropDownWidth="wrap_content"-->
-                        <!--android:textColor="@color/primaryText"-->
-                        <!--android:visibility="gone">-->
-                        <!--<requestFocus />-->
-                    <!--</AutoCompleteTextView>-->
-                    <com.app.external.CustomEditText
-                        android:id="@+id/autoCompleteTextView1"
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/white"
@@ -269,13 +250,31 @@
                         android:layout_toEndOf="@+id/searchIcon"
                         android:layout_centerVertical="true"
                         android:ems="10"
-                        android:imeOptions="actionDone"
-                        android:singleLine="true"
+                        android:imeOptions="actionSearch"
                         android:text=""
-                        android:hint="@string/select_location"
-                        android:textColor="@color/primaryText">
+                        android:hint="@string/world_wide"
+                        android:dropDownAnchor="@id/autoLocationLay"
+                        android:dropDownWidth="wrap_content"
+                        android:textColor="@color/primaryText"
+                        android:visibility="gone">
                         <requestFocus />
-                    </com.app.external.CustomEditText>
+                    </AutoCompleteTextView>
+                    <com.app.external.CustomTextView
+                        android:id="@+id/LocationTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="35dp"
+                        android:layout_toStartOf="@+id/iconLay"
+                        android:layout_toEndOf="@+id/searchIcon"
+                        android:gravity="center|left"
+                        android:ems="10"
+                        android:text="@string/location_temp"
+                        android:textSize="18sp"
+                        android:textColor="@color/hint_color"
+                        android:visibility="visible"/>
+
                     <!--<com.app.external.CustomEditText-->
                         <!--android:id="@+id/locationTxt1"-->
                         <!--android:layout_width="match_parent"-->
@@ -303,14 +302,14 @@
                         android:layout_alignParentRight="true">
 
                         <ImageView
-                            android:id="@+id/cross_icon"
+                            android:id="@+id/cross_icon1"
                             android:layout_width="15dp"
                             android:layout_height="15dp"
                             android:layout_gravity="center_vertical"
                             android:layout_toRightOf="@+id/autoCompleteTextView"
                             android:tint="@color/primaryText"
                             android:src="@drawable/cancel"
-                            android:visibility="visible" />
+                            android:visibility="gone" />
                         <ImageView
                             android:id="@+id/downIcon1"
                             android:layout_width="25dp"
@@ -327,20 +326,59 @@
 
                 </RelativeLayout>
 
-                <LinearLayout
-                    android:id="@+id/locationListLay"
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/locationListLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_below="@+id/autoLocationLay"
+                android:background="@drawable/home_location_bg1"
+                android:orientation="vertical"
+                android:visibility="visible">
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/locationLay1"
-                    android:visibility="visible">
-                    <ListView
-                        android:id="@+id/locationList"
+                    android:id="@+id/locationLay2">
+                    <com.app.external.CustomEditText
+                        android:id="@+id/autoCompleteTextView1"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:overScrollMode="always"/>
-                </LinearLayout>
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_gravity="center"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textSize="18sp"
+                        android:hint="@string/enter_location"
+                        android:textColor="@color/primaryText"
+                        android:visibility="visible">
+                        <requestFocus />
+                    </com.app.external.CustomEditText>
+                    <ImageView
+                        android:id="@+id/cross_icon"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignRight="@+id/autoCompleteTextView1"
+                        android:tint="@color/primaryText"
+                        android:src="@drawable/cancel"
+                        android:visibility="visible" />
+                </RelativeLayout>
 
-            </RelativeLayout>
+                <ListView
+                    android:id="@+id/locationList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="always"/>
+            </LinearLayout>
 
         </RelativeLayout>
 

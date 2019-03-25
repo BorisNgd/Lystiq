@@ -32,4 +32,5 @@
     <color name="seekbar_alpha_color">#1Ae40046</color>
     <color name="decline_offer_bkg">#f0e7ea</color>
     <color name="chat_right_color">#e6f6f0</color>
+    <color name="hint_color">#808080</color>
 </resources>

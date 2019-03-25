@@ -71,6 +71,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -210,6 +211,7 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
     CoordinatorLayout rootview;
     RelativeLayout top;
     Toolbar toolBar;
+    TextView locationTextView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -246,9 +248,8 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
         progress = (AVLoadingIndicatorView) findViewById(R.id.progress);
         nullLay = (LinearLayout) findViewById(R.id.nullLay);
         btnAddStuff = (FloatingActionButton) findViewById(R.id.btnAddStuff);
-        locationLay = (RelativeLayout) findViewById(R.id.locationLay);
-        locationTxt = (TextView) findViewById(R.id.locationTxt);
-        locationTxt1 = (EditText) findViewById(R.id.locationTxt1);
+//        locationLay = (RelativeLayout) findViewById(R.id.locationLay);
+//        locationTxt = (TextView) findViewById(R.id.locationTxt);
         filterList = (HorizontalListView) findViewById(R.id.filterList);
         filterView = (View) findViewById(R.id.filterView);
         notifybtn = (ImageView) findViewById(R.id.notifybtn);
@@ -277,6 +278,8 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
                 }
             }
         });
+
+        locationListLay.setVisibility(GONE);
 
         top.setOnClickListener(new OnClickListener() {
             @Override
@@ -326,10 +329,13 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
         //Getting the instance of AutoCompleteTextView
         actv = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
 
+        locationTextView = (TextView) findViewById(R.id.LocationTextView);
+        locationTextView.setOnClickListener(this);
         actv1 = (EditText) findViewById(R.id.autoCompleteTextView1);
+        actv1.setClickable(true);
 
         if(getIntent().getExtras().containsKey("loc_name")){
-            actv1.setText(getIntent().getExtras().getString("loc_name"));
+            locationTextView.setText(getIntent().getExtras().getString("loc_name"));
             crossIcon.setVisibility(GONE);
         }
 
@@ -339,6 +345,7 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
         actv.setEnabled(false);
         actv1.addTextChangedListener(this);
         actv1.setEnabled(false);
+        actv1.setOnClickListener(this);
 
 
 
@@ -357,14 +364,12 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
             public void onClick(View view) {
                 if(locationListLay.getVisibility() == View.VISIBLE){
                     locationListLay.setVisibility(View.GONE);
-                    actv.setEnabled(false);
                     actv1.setEnabled(false);
                     downArrow.setScaleY(-1f);
                     imm.hideSoftInputFromWindow(actv1.getWindowToken(),0);
                     crossIcon.setVisibility(GONE);
                 }else {
                     locationListLay.setVisibility(View.VISIBLE);
-                    actv.setEnabled(true);
                     actv1.setEnabled(true);
                     imm.showSoftInput(actv1, 1);
                     downArrow.setScaleY(1f);
@@ -432,52 +437,52 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
             }
         });
 
-        actv1.setOnClickListener(new View.OnClickListener(){
+//        actv1.setOnClickListener(new View.OnClickListener(){
+//
+//            @Override
+//            public void onClick(View view) {
+//                if(locationListLay.getVisibility() == View.VISIBLE){
+//                    locationListLay.setVisibility(View.GONE);
+//                    actv.setEnabled(false);
+//                    actv1.setEnabled(false);
+//                    downArrow.setScaleY(-1f);
+//                    imm.hideSoftInputFromWindow(actv1.getWindowToken(),0);
+//                }else {
+//                    locationListLay.setVisibility(View.VISIBLE);
+//                    actv.setEnabled(true);
+//                    actv1.setEnabled(true);
+//                    downArrow.setScaleY(1f);
+//                    imm.showSoftInput(actv1, 0);
+//                }
+//            }
+//        });
 
-            @Override
-            public void onClick(View view) {
-                if(locationListLay.getVisibility() == View.VISIBLE){
-                    locationListLay.setVisibility(View.GONE);
-                    actv.setEnabled(false);
-                    actv1.setEnabled(false);
-                    downArrow.setScaleY(-1f);
-                    imm.hideSoftInputFromWindow(actv1.getWindowToken(),0);
-                }else {
-                    locationListLay.setVisibility(View.VISIBLE);
-                    actv.setEnabled(true);
-                    actv1.setEnabled(true);
-                    downArrow.setScaleY(1f);
-                    imm.showSoftInput(actv1, 0);
-                }
-            }
-        });
-
-        actv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String selected_loc = actv.getText().toString();
-                int position  = locationListAry.indexOf(selected_loc);
-                String selected_locID = locationListIDAry.get(position);
-//                actv.setTag(selected_locID);
-//                actv.setText(selected_loc);
-                if(selected_loc != null && !selected_loc.equals(getString(R.string.world_wide))){
-                    lat = Double.valueOf(locationAry.get(position-1).get(Constants.TAG_LOCATION_LAT));
-                    lon = Double.valueOf(locationAry.get(position-1).get(Constants.TAG_LOCATION_LON));
-                }else{
-                    lat = 0.0;
-                    lon = 0.0;
-                }
-//                lat = Double.valueOf(locationAry.get(position).get(Constants.TAG_LOCATION_LAT));
-//                lon = Double.valueOf(locationAry.get(position).get(Constants.TAG_LOCATION_LON));
-                loadHomeItemList(0);
-                locationListLay.setVisibility(GONE);
-                downArrow.setScaleY(-1f);
-                downArrowCount = 0;
-                prevPosition = i;
-                pulldown = true;
-                initializeHomeUI();
-            }
-        });
+//        actv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                String selected_loc = actv.getText().toString();
+//                int position  = locationListAry.indexOf(selected_loc);
+//                String selected_locID = locationListIDAry.get(position);
+////                actv.setTag(selected_locID);
+////                actv.setText(selected_loc);
+//                if(selected_loc != null && !selected_loc.equals(getString(R.string.world_wide))){
+//                    lat = Double.valueOf(locationAry.get(position-1).get(Constants.TAG_LOCATION_LAT));
+//                    lon = Double.valueOf(locationAry.get(position-1).get(Constants.TAG_LOCATION_LON));
+//                }else{
+//                    lat = 0.0;
+//                    lon = 0.0;
+//                }
+////                lat = Double.valueOf(locationAry.get(position).get(Constants.TAG_LOCATION_LAT));
+////                lon = Double.valueOf(locationAry.get(position).get(Constants.TAG_LOCATION_LON));
+//                loadHomeItemList(0);
+//                locationListLay.setVisibility(GONE);
+//                downArrow.setScaleY(-1f);
+//                downArrowCount = 0;
+//                prevPosition = i;
+//                pulldown = true;
+//                initializeHomeUI();
+//            }
+//        });
 
 
         locationList.setSelection(prevPosition);
@@ -490,7 +495,7 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
                 String selected_locID = locationListIDAry.get(i);
 //                actv.setTag(selected_locID);
 //                actv.setText(selected_loc);
-                actv1.setText(selected_loc);
+                locationTextView.setText(selected_loc);
                 if(selected_loc != null && !selected_loc.equals(getString(R.string.world_wide))){
                     int position  = autolocationListAry.indexOf(selected_loc);
                     Log.v("FFF","FFF1="+position);
@@ -499,7 +504,7 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
                 }else{
                     lat = 0.0;
                     lon = 0.0;
-                    actv1.setEnabled(false);
+//                    actv1.setEnabled(false);
                 }
 
                 loadHomeItemList(0);
@@ -651,7 +656,7 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
         search_btn.setOnClickListener(this);
         menu_btn.setOnClickListener(this);
         swipeLayout.setOnRefreshListener(this);
-        locationLay.setOnClickListener(this);
+//        locationLay.setOnClickListener(this);
         login.setOnClickListener(this);
         btnAddStuff.setOnClickListener(this);
         headerLay.setOnClickListener(this);
@@ -688,7 +693,7 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
         swipeLayout.setColorSchemeColors(getResources().getColor(R.color.progressColor));
 
         //To set Location
-        setLocationTxt();
+//        setLocationTxt();
 
         //To get Home data from Api
         loadData();
@@ -839,27 +844,27 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
      * function for get the location from gps
      **/
 
-    private void setLocationTxt() {
-        if (LocationActivity.locationRemoved) {
-            locationTxt.setText(getString(R.string.world_wide));
-        } else if (!LocationActivity.location.equals(getString(R.string.world_wide))) {
-            locationTxt.setText(LocationActivity.location);
-        } else {
-            if (googleApiClient == null) {
-//                setUpGClient();
-                locationTxt.setText(getString(R.string.world_wide));
-            } else if (mylocation == null) {
-//                getMyLocation();
-                locationTxt.setText(getString(R.string.world_wide));
-            } else {
-//                LocationActivity.lat = mylocation.getLatitude();
-//                LocationActivity.lon = mylocation.getLongitude();
-//                Log.v(TAG, "lat = " + LocationActivity.lat + "&lon=" + LocationActivity.lon);
-
-//                refreshLocation();
-            }
-        }
-    }
+//    private void setLocationTxt() {
+//        if (LocationActivity.locationRemoved) {
+//            locationTxt.setText(getString(R.string.world_wide));
+//        } else if (!LocationActivity.location.equals(getString(R.string.world_wide))) {
+//            locationTxt.setText(LocationActivity.location);
+//        } else {
+//            if (googleApiClient == null) {
+////                setUpGClient();
+//                locationTxt.setText(getString(R.string.world_wide));
+//            } else if (mylocation == null) {
+////                getMyLocation();
+//                locationTxt.setText(getString(R.string.world_wide));
+//            } else {
+////                LocationActivity.lat = mylocation.getLatitude();
+////                LocationActivity.lon = mylocation.getLongitude();
+////                Log.v(TAG, "lat = " + LocationActivity.lat + "&lon=" + LocationActivity.lon);
+//
+////                refreshLocation();
+//            }
+//        }
+//    }
 
     private void refreshLocation() {
         try {
@@ -1390,7 +1395,7 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
     public void onRefresh() {
         if (!pulldown) {
             if (JoysaleApplication.isNetworkAvailable(FragmentMainActivity.this)) {
-                setLocationTxt();
+//                setLocationTxt();
                 pulldown = true;
                 mScrollListener.resetpagecount();
                 if(actv1.getText().toString() == null || actv1.getText().toString().equals("")){
@@ -1421,7 +1426,7 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
 //                        getMyLocation();
                         break;
                     case Activity.RESULT_CANCELED:
-                        locationTxt.setText(getString(R.string.world_wide));
+//                        locationTxt.setText(getString(R.string.world_wide));
                         break;
                 }
                 break;
@@ -1761,10 +1766,48 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
     @Override
     public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
         if (charSequence.length() > 0) {
-            FragmentMainActivity.this.locationListAdapter.getFilter().filter(charSequence);
+            FragmentMainActivity.this.locationListAdapter.getFilter().filter(charSequence, new Filter.FilterListener() {
+                @Override
+                public void onFilterComplete(int i) {
+                    if(i>6){
+                        DisplayMetrics displayMetrics = new DisplayMetrics();
+                        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) locationListLay.getLayoutParams();
+                        int hght = displayMetrics.heightPixels;
+                        layoutParams.height=JoysaleApplication.dpToPx(FragmentMainActivity.this, 250);
+                        locationListLay.setLayoutParams(layoutParams);
+                    }else{
+                        DisplayMetrics displayMetrics = new DisplayMetrics();
+                        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) locationListLay.getLayoutParams();
+                        int hght = displayMetrics.heightPixels;
+                        layoutParams.height= RelativeLayout.LayoutParams.WRAP_CONTENT;
+                        locationListLay.setLayoutParams(layoutParams);
+                    }
+                }
+            });
             crossIcon.setVisibility(View.VISIBLE);
         } else {
-            FragmentMainActivity.this.locationListAdapter.getFilter().filter("");
+            FragmentMainActivity.this.locationListAdapter.getFilter().filter("",new Filter.FilterListener() {
+                @Override
+                public void onFilterComplete(int i) {
+                    if(i>6){
+                        DisplayMetrics displayMetrics = new DisplayMetrics();
+                        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) locationListLay.getLayoutParams();
+                        int hght = displayMetrics.heightPixels;
+                        layoutParams.height=JoysaleApplication.dpToPx(FragmentMainActivity.this, 250);
+                        locationListLay.setLayoutParams(layoutParams);
+                    }else{
+                        DisplayMetrics displayMetrics = new DisplayMetrics();
+                        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) locationListLay.getLayoutParams();
+                        int hght = displayMetrics.heightPixels;
+                        layoutParams.height= RelativeLayout.LayoutParams.WRAP_CONTENT;
+                        locationListLay.setLayoutParams(layoutParams);
+                    }
+                }
+            });
 //            partial_autolocationListAry =autolocationListAry;
             locationListAdapter.notifyDataSetChanged();
             crossIcon.setVisibility(View.GONE);
@@ -2391,7 +2434,7 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
                 if (addresses.size() > 0) {
                     LocationActivity.location = addresses.get(0).getAddressLine(0)
                             + addresses.get(0).getAddressLine(1) + " ";
-                    locationTxt.setText(LocationActivity.location);
+//                    locationTxt.setText(LocationActivity.location);
 
                     Constants.fileditor.putString(Constants.TAG_LOCATION, LocationActivity.location);
                     Constants.fileditor.commit();
@@ -2531,6 +2574,25 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
                     actv1.setEnabled(true);
                 }else {
                     actv1.setEnabled(false);
+                }
+                break;
+            case R.id.LocationTextView:
+                if(locationListLay.getVisibility() == View.VISIBLE){
+                    locationListLay.setVisibility(View.GONE);
+                    actv.setEnabled(false);
+                    actv1.setEnabled(false);
+                    downArrow.setScaleY(-1f);
+                    actv1.setVisibility(View.GONE);
+                    actv1.setEnabled(false);
+                    imm.hideSoftInputFromWindow(actv1.getWindowToken(),0);
+                }else {
+                    locationListLay.setVisibility(View.VISIBLE);
+                    actv.setEnabled(true);
+                    actv1.setEnabled(true);
+                    downArrow.setScaleY(1f);
+                    actv1.setVisibility(View.VISIBLE);
+                    actv1.setEnabled(true);
+                    imm.showSoftInput(actv1, 0);
                 }
                 break;
         }
