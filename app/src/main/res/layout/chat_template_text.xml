@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:elevation="7dp"
+    android:background="@drawable/primary_curve_corner"
+    android:layout_height="wrap_content"
+    tools:ignore="UnusedAttribute">
+    <com.app.external.CustomTextView
+        android:id="@+id/templateMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:textAppearance="@android:style/TextAppearance.Small"
+        android:textColor="@color/white"
+        app:fonts="font_regular.ttf" />
+
+
+</RelativeLayout>

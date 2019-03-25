@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "380035341603",
+    "firebase_url": "https://lystiq.firebaseio.com",
+    "project_id": "lystiq",
+    "storage_bucket": "lystiq.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380035341603:android:21af4dfaded0c6c7",
+        "android_client_info": {
+          "package_name": "com.app.lystiq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "380035341603-qe78gfad7tjs5knflekddicchuapcikt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClG9LOXZ95CniaIMwQI21EyfnWGmlDbuw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

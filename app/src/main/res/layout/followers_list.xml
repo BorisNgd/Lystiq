@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="@string/layout_direction"
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
+
+    <RelativeLayout
+        android:id="@+id/mainLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <com.app.external.RoundedImageView
+            android:id="@+id/userImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:corner_radius="100dp"
+            app:round_background="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@+id/userImage"
+            android:layout_toStartOf="@+id/followStatus"
+            android:orientation="vertical">
+
+            <com.app.external.CustomTextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="User name"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/primaryText"
+                app:fonts="font_regular.ttf" />
+
+            <com.app.external.CustomTextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="location"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/secondaryText"
+                app:fonts="font_regular.ttf" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/followStatus"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/follow_bg"
+            android:padding="10dp"
+            android:src="@drawable/follow" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_roundcorner"
+    android:layoutDirection="@string/layout_direction"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/alert_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:paddingTop="10dp"
+        android:visibility="gone" />
+
+    <com.app.external.CustomTextView
+        android:id="@+id/alert_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Alert"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:fonts="font_regular.ttf" />
+
+    <com.app.external.CustomTextView
+        android:id="@+id/alert_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="start"
+        android:text="Message asd bsajdbhsa bdabdkjasdadsadsad nbjasbdakjbd"
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:textColor="@color/primaryText"
+        app:fonts="font_regular.ttf" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:padding="10dp">
+
+        <com.app.external.CustomTextView
+            android:id="@+id/alert_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/ok"
+            android:textAllCaps="false"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:textColor="@color/colorPrimary"
+            app:fonts="font_regular.ttf" />
+
+        <com.app.external.CustomTextView
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/cancel"
+            android:textAllCaps="false"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:textColor="@color/primaryText"
+            android:visibility="gone"
+            app:fonts="font_regular.ttf" />
+    </LinearLayout>
+
+</LinearLayout>

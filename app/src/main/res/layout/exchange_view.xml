@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chat_bg"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/actionbar"
+        layout="@layout/actionbar_activity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <RelativeLayout
+        android:id="@+id/detailLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/actionbar"
+        android:background="@color/white"
+        android:layoutDirection="@string/layout_direction">
+
+        <LinearLayout
+            android:id="@+id/statusLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.app.external.CustomTextView
+                android:id="@+id/success"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="15dp"
+                android:singleLine="true"
+                android:text="Success"
+                android:textSize="@dimen/text_medium"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/green_color"
+                app:fonts="font_regular.ttf" />
+
+            <com.app.external.CustomTextView
+                android:id="@+id/failed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="15dp"
+                android:singleLine="true"
+                android:text="Failed"
+                android:textSize="@dimen/text_medium"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/red"
+                app:fonts="font_regularfont_regular.ttf" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_below="@+id/statusLay"
+            android:background="@color/divider" />
+
+        <RelativeLayout
+            android:id="@+id/userdetailLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view"
+            android:layout_marginStart="15dp">
+
+            <com.app.external.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/userImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:border_color="@color/white"
+                app:border_width="0dp"
+                app:corner_radius="100dip"
+                app:round_background="true" />
+
+            <com.app.external.CustomTextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/userImage"
+                android:text="Username"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textSize="@dimen/text_medium"
+                android:textColor="@color/primaryText"
+                app:fonts="font_regular.ttf" />
+
+            <com.app.external.CustomTextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userName"
+                android:layout_marginTop="3dp"
+                android:layout_toEndOf="@+id/userImage"
+                android:text="1 day ago"
+                android:textColor="@color/secondaryText"
+                app:fonts="font_regular.ttf" />
+
+            <com.app.external.CustomTextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:text="Status"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:fonts="font_regular.ttf" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/userdetailLay"
+            android:layout_marginTop="10dp"
+            android:background="@color/divider" />
+
+        <LinearLayout
+            android:id="@+id/exchangedelLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/divider"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="15dp">
+
+            <LinearLayout
+                android:id="@+id/exchangeitemLay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:orientation="vertical">
+
+                <com.app.external.RoundedImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/exitemImage"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:background="@color/colorPrimary"
+                    android:scaleType="centerCrop"
+                    app:border_color="@color/white"
+                    app:border_width="0dp"
+                    app:corner_radius="100dip"
+                    app:round_background="true" />
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/exitemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="Demo"
+                    android:textColor="@color/primaryText"
+                    app:fonts="font_regular.ttf" />
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_toEndOf="@+id/useritemLay"
+                android:layout_toStartOf="@+id/exchangeitemLay"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/myexchngImage"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/exchngarrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/myexchangeitemLay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:orientation="vertical">
+
+                <com.app.external.RoundedImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/myitemImage"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:background="@color/colorPrimary"
+                    android:scaleType="centerCrop"
+                    app:border_color="@color/white"
+                    app:border_width="0dp"
+                    app:corner_radius="100dip"
+                    app:round_background="true" />
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/myitemName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="Jean"
+                    android:textColor="@color/primaryText"
+                    app:fonts="font_regular.ttf" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/detailLay"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/chat_bg"
+        android:divider="@null"
+        android:dividerHeight="10dp"
+        android:scrollbarStyle="outsideInset" />
+
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/progress"
+        android:layout_width="@dimen/progress_size"
+        android:layout_height="@dimen/progress_size"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/progressColor"
+        app:indicatorName="BallPulseIndicator" />
+
+<!--    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:gravity="center_vertical"
+        android:layoutDirection="@string/layout_direction"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <com.app.external.CustomEditText
+            android:id="@+id/editText"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="0.8"
+            android:background="@drawable/search_layout_bkg"
+            android:gravity="top"
+            android:hint="@string/writemessage"
+            android:inputType="textNoSuggestions|textCapSentences|textMultiLine|textShortMessage"
+            android:isScrollContainer="true"
+            android:maxLength="500"
+            android:maxLines="4"
+            android:padding="10dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            app:fonts="font_regular.ttf" />
+
+        <LinearLayout
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/primary_roundcorner"
+            android:gravity="center"
+            android:padding="15dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/chat_send_btn" />
+        </LinearLayout>
+
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:layoutDirection="@string/layout_direction"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:background="@drawable/chatbtn_layout_bkg"
+            android:orientation="horizontal"
+            android:layout_marginEnd="10dp">
+            <com.app.external.CustomEditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.9"
+                android:gravity="top"
+                android:hint="@string/writemessage"
+                android:inputType="textCapSentences|textMultiLine|text"
+                android:textSize="@dimen/text_large"
+                android:isScrollContainer="true"
+                android:maxLength="500"
+                android:maxLines="4"
+                android:padding="10dp"
+                android:background="@drawable/edittext_layout_bkg"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                app:fonts="font_regular.ttf" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/editText">
+                <LinearLayout
+                    android:id="@+id/shareImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_toStartOf="@+id/sharelocation"
+                    android:padding="10dp"
+                    android:layout_marginRight="2dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/attach" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sharelocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/search_layout_bkg"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/location_icon" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/primary_roundcorner"
+            android:gravity="center"
+            android:padding="15dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/chat_send_btn" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

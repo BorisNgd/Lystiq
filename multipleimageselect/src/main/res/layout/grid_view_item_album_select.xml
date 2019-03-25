@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.gallery.multipleimageselect.external.SquareView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frame_layout_album_select"
+        android:paddingTop="1dp"
+        android:paddingRight="1dp"
+        android:paddingBottom="1dp"
+        android:paddingLeft="1dp">
+        <ImageView
+            android:id="@+id/image_view_album_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"/>
+
+
+    </com.gallery.multipleimageselect.external.SquareView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@drawable/blacktrans" />
+
+
+    <TextView
+        android:id="@+id/text_view_album_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="bottom|center"
+        android:layout_alignParentBottom="true"
+        android:text=""
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        />
+    <!--</FrameLayout>-->
+</RelativeLayout>

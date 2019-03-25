@@ -1,0 +1,161 @@
+{
+  "project_info": {
+    "project_number": "600632316387",
+    "firebase_url": "https://tidal-heading-791.firebaseio.com",
+    "project_id": "tidal-heading-791",
+    "storage_bucket": "tidal-heading-791.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600632316387:android:f7343b77a60ba4c5",
+        "android_client_info": {
+          "package_name": "com.app.lystiq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600632316387-31u84iba1io8hbp9magekset0f7s2c4c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.lystiq",
+            "certificate_hash": "af5fe4e05853b9e79476e734bc0465710061f2b4"
+          }
+        },
+        {
+          "client_id": "600632316387-c647po6pl4nk7l8arf0jef5p61vs3tc3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.lystiq",
+            "certificate_hash": "6cd8960b6438566d3f2a0dabcdf2808681578030"
+          }
+        },
+        {
+          "client_id": "600632316387-v91qssmrvp8murjn6sfbguh229opab0s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.lystiq",
+            "certificate_hash": "99a6147ee4a6bee12ea31a005945b1171c75ee53"
+          }
+        },
+        {
+          "client_id": "600632316387-v0nfr6jpifo2oj947vj52l7oa1g2ckb6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.lystiq",
+            "certificate_hash": "65015a3d0ea4b285349b272aa1668da0d59ee2b9"
+          }
+        },
+        {
+          "client_id": "600632316387-um8udeeigv6f1ovl9qqos11scis7qcec.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.lystiq",
+            "certificate_hash": "401099a5cc78ba1dbeb1c8ecaffb6cf707eb9e6a"
+          }
+        },
+        {
+          "client_id": "600632316387-ru5fh04l5a5jst83pfklr3p7sssa6754.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.lystiq",
+            "certificate_hash": "56163d485581eebf58233e82398aa1ea557b3a2d"
+          }
+        },
+        {
+          "client_id": "600632316387-7c5a0op985doqnmbqbht2po19g3vlsb1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4nsFHJvKjE48VOGygV54bRe_SW-zIbsk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600632316387-7c5a0op985doqnmbqbht2po19g3vlsb1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "600632316387-g95ts658n4o7q0bdu8htif1djoqqdkst.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hitasoft.buynow.joysale"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600632316387:android:3485a044eb30554a",
+        "android_client_info": {
+          "package_name": "com.hitasoft.buynow.joysale"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600632316387-kug9akkd82d8g66tit4m3kofq2drs922.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hitasoft.buynow.joysale",
+            "certificate_hash": "81ea248d908d8a165c69b168e62cc0dbffc2c9f4"
+          }
+        },
+        {
+          "client_id": "600632316387-3210b462qtq2oupoqmt5s40s3ihe849h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hitasoft.buynow.joysale",
+            "certificate_hash": "401099a5cc78ba1dbeb1c8ecaffb6cf707eb9e6a"
+          }
+        },
+        {
+          "client_id": "600632316387-7c5a0op985doqnmbqbht2po19g3vlsb1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4nsFHJvKjE48VOGygV54bRe_SW-zIbsk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600632316387-7c5a0op985doqnmbqbht2po19g3vlsb1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "600632316387-g95ts658n4o7q0bdu8htif1djoqqdkst.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hitasoft.buynow.joysale"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

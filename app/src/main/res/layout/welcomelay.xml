@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.app.external.CustomTextView
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="@string/skip"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:fonts="font_regular.ttf" />
+
+    <RelativeLayout
+        android:id="@+id/centerLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomLay"
+        android:layout_below="@+id/skip"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/loghead"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:gravity="center"
+                android:src="@drawable/transparent_logo" />
+
+            <com.app.external.CustomTextView
+                android:id="@+id/startmak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/startmaking"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:fonts="font_regular.ttf" />
+
+            <LinearLayout
+                android:id="@+id/socialLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/fbLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/fb_bg"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/fbBtn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:padding="10dp"
+                        android:src="@drawable/fb_icon" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/fbTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:paddingEnd="40dp"
+                        android:text="@string/facebook"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:fonts="font_bold.ttf" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/twtLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/twtBtn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:padding="10dp" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/twtTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingEnd="40dp"
+                        android:text="@string/twitter"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:fonts="font_bold.ttf" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/gpLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/gp_bg"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/gpBtn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:padding="10dp"
+                        android:src="@drawable/g_icon" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/gpTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingEnd="40dp"
+                        android:text="@string/googleplus"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:fonts="font_bold.ttf" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+
+        <com.app.external.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/continue_with_email"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:fonts="font_regular.ttf" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <com.app.external.CustomTextView
+                android:id="@+id/login"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/login"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:fonts="font_regular.ttf" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="20dp"
+                android:background="@color/black" />
+
+            <com.app.external.CustomTextView
+                android:id="@+id/signup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/signup"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:fonts="font_regular.ttf" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

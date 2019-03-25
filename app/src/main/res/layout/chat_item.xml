@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!--Date Layout-->
+
+    <RelativeLayout
+        android:id="@+id/dateLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/transparent">
+
+        <com.app.external.CustomTextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:text="Jan 1st 2015"
+            android:textColor="@color/primaryText"
+            android:textSize="@dimen/text_normal"
+            app:fonts="font_regular.ttf" />
+    </RelativeLayout>
+
+    <!--Left Side Layout-->
+
+    <RelativeLayout
+        android:id="@+id/leftLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layoutDirection="ltr">
+
+        <!--Left Message Layout-->
+
+        <RelativeLayout
+            android:id="@+id/left_msg_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="80dp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/leftCorner"
+                android:layout_width="25dp"
+                android:layout_height="20dp"
+                android:src="@drawable/chat_bg_left" />
+
+            <RelativeLayout
+                android:id="@+id/leftalignLay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/leftCorner"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/chat_left_corner"
+                android:minWidth="80dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/leftDelete"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/delete_left"
+                    android:padding="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="gone"/>
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/leftMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/leftDelete"
+                    android:gravity="center_vertical"
+                    android:minWidth="80dp"
+                    android:paddingBottom="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingTop="7dp"
+                    android:text=""
+                    android:textSize="@dimen/text_medium"
+                    android:textColor="@color/primaryText"
+                    android:visibility="visible"
+                    app:fonts="font_regular.ttf" />
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/leftTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/leftMsg"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_below="@+id/leftMsg"
+                    android:text=""
+                    android:textColor="@color/secondaryText"
+                    android:textSize="@dimen/text_small"
+                    app:fonts="font_regular.ttf" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!--Left Image and Map Layout-->
+
+        <RelativeLayout
+            android:id="@+id/left_image_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/leftImgCorner"
+                android:layout_width="28dp"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/chat_bg_left" />
+
+            <RelativeLayout
+                android:id="@+id/leftimgalignlay"
+                android:layout_width="290dp"
+                android:layout_height="190dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/chat_left_corner"
+                android:minWidth="65dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/left_image"
+                    android:layout_width="280dp"
+                    android:layout_height="180dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:scaleType="centerCrop" />
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/leftImgTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    android:shadowColor="@color/primaryText"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="4"
+                    app:fonts="font_regular.ttf" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!--Left Offer Layout-->
+
+        <RelativeLayout
+            android:id="@+id/left_makeoffer_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/leftMofferCorner"
+                android:layout_width="28dp"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:scaleType="centerCrop"
+                android:tint="@color/green_color"
+                android:src="@drawable/chat_make_offer_bg_left" />
+
+            <LinearLayout
+                android:id="@+id/leftmofferalignlay"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/makeoffer_roundcorner"
+                android:minWidth="65dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/offer_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="@string/layout_direction"
+                    android:minHeight="120dp"
+                    android:orientation="horizontal">
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/left_makeoffer_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="10dp"
+                        android:maxLines="2"
+                        android:text=""
+                        android:textSize="@dimen/text_medium"
+                        android:textColor="@color/white"
+                        app:fonts="font_regular.ttf" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/left_makeoffer_name"
+                        android:orientation="horizontal">
+
+                        <com.app.external.RoundedImageView
+                            android:id="@+id/leftOfferImg"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="3dp"
+                            android:scaleType="centerCrop"
+                            app:corner_radius="4dip" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/left_makeoffer_name"
+                            android:layout_marginEnd="10dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_toRightOf="@+id/leftOfferImg"
+                            android:orientation="vertical">
+
+                            <com.app.external.CustomTextView
+                                android:id="@+id/left_makeoffer_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/acceptoffer_roundcorner"
+                                android:layoutDirection="ltr"
+                                android:paddingBottom="5dp"
+                                android:paddingEnd="10dp"
+                                android:paddingStart="10dp"
+                                android:paddingTop="5dp"
+                                android:text=""
+                                android:textSize="@dimen/text_medium"
+                                android:textColor="@color/green_color"
+                                app:fonts="font_regular.ttf" />
+
+                            <com.app.external.CustomTextView
+                                android:id="@+id/left_makeoffer_msg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:paddingRight="5dp"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:text=""
+                                android:textSize="@dimen/text_normal"
+                                android:textColor="@color/white"
+                                app:fonts="font_regular.ttf" />
+
+                            <com.app.external.CustomTextView
+                                android:id="@+id/left_makeoffer_duration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="5dp"
+                                android:paddingRight="5dp"
+                                android:text=""
+                                android:textSize="@dimen/text_normal"
+                                android:textColor="@color/white"
+                                app:fonts="font_regular.ttf" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/offerstatusLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/makeoffer_btn_roundcorner"
+                    android:orientation="horizontal"
+                    android:weightSum="20">
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/offerAccept"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9.95"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="@string/accept"
+                        android:textColor="@color/green_color"
+                        android:textSize="@dimen/text_normal"
+                        app:fonts="font_regular.ttf" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.1"
+                        android:background="@color/divider" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/offerDeclined"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9.95"
+                        android:gravity="center"
+                        android:padding="15dp"
+                        android:text="@string/decline"
+                        android:textSize="@dimen/text_normal"
+                        app:fonts="font_regular.ttf" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--Right Side Layout-->
+
+    <RelativeLayout
+        android:id="@+id/rightLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layoutDirection="ltr">
+        <!--Right Message Layout-->
+
+        <RelativeLayout
+            android:id="@+id/right_msg_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/rightCorner"
+                android:layout_width="28dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                android:tint="@color/chat_right_color"
+                android:src="@drawable/chat_bg_right" />
+
+            <RelativeLayout
+                android:id="@+id/rightalignlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/chat_right_corner"
+                android:minWidth="80dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/rightDelete"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/delete_right"
+                    android:padding="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="gone"/>
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/rightMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="80dp"
+                    android:layout_toRightOf="@+id/rightDelete"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:text=""
+                    android:textSize="@dimen/text_medium"
+                    android:textColor="@color/primaryText"
+                    app:fonts="font_regular.ttf" />
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/rightTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/rightMsg"
+                    android:layout_below="@+id/rightMsg"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text=""
+                    android:textColor="@color/primaryText"
+                    android:textSize="@dimen/text_small"
+                    app:fonts="font_regular.ttf" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!--Right Image and Map  Layout-->
+
+        <RelativeLayout
+            android:id="@+id/right_image_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/rightImgCorner"
+                android:layout_width="28dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                android:tint="@color/chat_right_color"
+                android:src="@drawable/chat_bg_right" />
+
+            <RelativeLayout
+                android:id="@+id/rightimgalignlay"
+                android:layout_width="290dp"
+                android:layout_height="190dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/chat_right_corner"
+                android:minWidth="65dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/right_image"
+                    android:layout_width="280dp"
+                    android:layout_height="180dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp"
+                    android:scaleType="centerCrop" />
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/rightImgTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:text=""
+                    android:textColor="@color/divider"
+                    android:textSize="@dimen/text_small"
+                    android:shadowColor="@color/primaryText"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="4"
+                    app:fonts="font_regular.ttf" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!--Right Offer Layout-->
+
+        <RelativeLayout
+            android:id="@+id/right_makeoffer_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/rightMofferCorner"
+                android:layout_width="28dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                android:tint="@color/green_color"
+                android:src="@drawable/chat_make_offer_bg_right" />
+
+            <LinearLayout
+                android:id="@+id/rightmofferalignlay"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/makeoffer_roundcorner"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:minWidth="65dp"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="@string/layout_direction"
+                    android:orientation="horizontal">
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/right_makeoffer_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="10dp"
+                        android:maxLines="2"
+                        android:text=""
+                        android:textSize="@dimen/text_medium"
+                        android:textColor="@color/white"
+                        app:fonts="font_regular.ttf" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/right_makeoffer_name"
+                        android:orientation="horizontal">
+
+                        <com.app.external.RoundedImageView
+                            android:id="@+id/rightOfferImg"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="5dp"
+                            android:scaleType="centerCrop"
+                            app:corner_radius="4dip" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="10dp"
+                            android:orientation="vertical">
+
+
+                            <com.app.external.CustomTextView
+                                android:id="@+id/right_makeoffer_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/acceptoffer_roundcorner"
+                                android:paddingBottom="5dp"
+                                android:paddingEnd="10dp"
+                                android:paddingStart="10dp"
+                                android:paddingTop="5dp"
+                                android:text=""
+                                android:textSize="@dimen/text_medium"
+                                android:textColor="@color/green_color"
+                                app:fonts="font_regular.ttf" />
+
+                            <com.app.external.CustomTextView
+                                android:id="@+id/right_makeoffer_msg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:paddingRight="5dp"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:text=""
+                                android:textSize="@dimen/text_normal"
+                                android:textColor="@color/white"
+                                app:fonts="font_regular.ttf" />
+
+                            <com.app.external.CustomTextView
+                                android:id="@+id/right_makeoffer_duration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="5dp"
+                                android:paddingRight="5dp"
+                                android:textSize="@dimen/text_normal"
+                                android:text=""
+                                android:textColor="@color/white"
+                                app:fonts="font_regular.ttf" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--Offer Accept Status Layout-->
+
+    <RelativeLayout
+        android:id="@+id/offer_result_lay"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/acceptoffer_roundcorner"
+        android:layoutDirection="@string/layout_direction"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.app.external.RoundedImageView
+                android:id="@+id/offerResultImg"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                app:corner_radius="4dip" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/offerResultIcon"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_centerVertical="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/offer_accept_icon" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/offerResultMsg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingStart="25dp"
+                        android:text="@string/offer_accept_msg"
+                        android:textColor="@color/green_color"
+                        android:textSize="@dimen/text_medium"
+                        app:fonts="font_regular.ttf" />
+
+                </RelativeLayout>
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/offerResultPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:paddingTop="5dp"
+                    android:text=""
+                    android:textColor="@color/primaryText"
+                    android:textSize="@dimen/text_large"
+                    app:fonts="font_regular.ttf" />
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/offerResultTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:text=""
+                    android:textColor="@color/secondaryText"
+                    android:textSize="@dimen/text_normal"
+                    app:fonts="font_regular.ttf" />
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/buyOfferPrd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/makeoffer_roundcorner"
+                    android:paddingBottom="5dp"
+                    android:paddingEnd="20dp"
+                    android:paddingStart="20dp"
+                    android:paddingTop="5dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="@dimen/text_medium"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/buynow"
+                    android:textColor="@color/white"
+                    android:visibility="visible"
+                    app:fonts="font_regular.ttf" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!--Item Layout-->
+
+    <RelativeLayout
+        android:id="@+id/itemLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/acceptoffer_roundcorner"
+        android:layoutDirection="@string/layout_direction"
+        android:visibility="gone">
+
+        <com.app.external.RoundedImageView
+            android:id="@+id/itemImage"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:adjustViewBounds="true"
+            android:background="@color/grey"
+            android:scaleType="centerCrop"
+            app:corner_radius="3dp"
+            app:round_background="true" />
+
+        <com.app.external.CustomTextView
+            android:id="@+id/itemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@+id/itemImage"
+            android:text="About Item"
+            android:textSize="@dimen/text_large"
+            android:textColor="@color/primaryText"
+            app:fonts="font_regular.ttf" />
+
+        <com.app.external.CustomTextView
+            android:id="@+id/aboutDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/itemName"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/itemImage"
+            android:text=""
+            android:textSize="@dimen/text_normal"
+            android:textColor="@color/secondaryText"
+            app:fonts="font_regular.ttf" />
+
+        <com.app.external.CustomTextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/aboutDate"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/itemImage"
+            android:background="@drawable/primary_curve_corner"
+            android:paddingBottom="5dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:text=""
+            android:textSize="@dimen/text_normal"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:fonts="font_regular.ttf" />
+
+        <com.app.external.CustomTextView
+            android:id="@+id/aboutMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/itemImage"
+            android:gravity="center_vertical"
+            android:text="text"
+            android:textSize="@dimen/text_normal"
+            android:textColor="@color/primaryText"
+            android:visibility="gone"
+            app:fonts="font_regular.ttf" />
+
+    </RelativeLayout>
+
+</LinearLayout>

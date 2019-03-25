@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layoutDirection="@string/layout_direction">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <com.app.external.RoundedImageView
+            android:id="@+id/user_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:adjustViewBounds="true"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            app:corner_radius="70dp"
+            app:round_background="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/user_image"
+            android:orientation="vertical">
+
+        <com.app.external.CustomTextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="username"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:textSize="@dimen/text_large"
+            android:textColor="@color/primaryText"
+            android:textStyle="normal"
+            app:fonts="font_regular.ttf" />
+
+        <com.app.external.CustomTextView
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginTop="1dp"
+            android:text="comment"
+            android:lineSpacingExtra="0dp"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:textSize="@dimen/text_normal"
+            android:textColor="@color/primaryText"
+            android:visibility="visible"
+            app:fonts="font_regular.ttf" />
+
+        <com.app.external.CustomTextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 hours ago"
+            android:layout_marginTop="1dp"
+            android:textColor="@color/secondaryText"
+            android:textSize="@dimen/text_very_small"
+            app:fonts="font_regular.ttf" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

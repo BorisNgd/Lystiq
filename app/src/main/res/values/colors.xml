@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--#e40046-->
+    <!--<color name="progressColor">#334a5d</color>-->
+    <color name="colorPrimary">#28c991</color>
+    <color name="colorPrimaryDark">#28c991</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorSecondary">#464e55</color>
+    <color name="divider">#e5ebf1</color>
+    <color name="bg">#f6f6f6</color>
+    <color name="primaryText">#444444</color>
+    <color name="secondaryText">#666666</color>
+    <color name="red">#ff003c</color>
+    <color name="white">#ffffff</color>
+    <color name="border_dark">#B6B6B6</color>
+    <color name="border">#f4f4f4</color>
+    <color name="black">#000000</color>
+    <color name="swipeColor">#334a5d</color>
+    <color name="progressColor">#28c991</color>
+    <color name="grey">#cccccc</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="sold_out">#de6b18</color>
+    <color name="line">#e5ebf1</color>
+    <color name="blue">#4d90fe</color>
+    <color name="white_transparent">#F2ffffff</color>
+    <color name="transparent_white">#99FFFFFF</color>
+    <color name="textPrimary">#FFFFFF</color>
+    <color name="right_side_color">#464e55</color>
+    <color name="green_color">#2bc248</color>
+    <color name="starColor">#ff9000</color>
+    <color name="red_color">#ff0000</color>
+    <color name="seekbar_alpha_color">#1Ae40046</color>
+    <color name="decline_offer_bkg">#f0e7ea</color>
+    <color name="chat_right_color">#e6f6f0</color>
+</resources>

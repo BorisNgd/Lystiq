@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/actionbar"
+        layout="@layout/actionbar_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/actionbar"
+        android:layoutDirection="@string/layout_direction">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider" />
+
+
+        <ListView
+            android:id="@+id/categoryList"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view"
+            android:background="@color/white"
+            android:scrollbars="none" />
+
+        <ListView
+            android:id="@+id/subList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/view"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/categoryList"
+            android:divider="@color/divider"
+            android:dividerHeight="0.7dp" />
+    </RelativeLayout>
+</RelativeLayout>

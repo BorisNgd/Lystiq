@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/hitasoft/Noor/Lystiq_Joysale_RonnieNjang/SourceCode/lystiqv3.2/parallaxScroll/src/main/assets"/><source path="/home/hitasoft/Noor/Lystiq_Joysale_RonnieNjang/SourceCode/lystiqv3.2/parallaxScroll/build/generated/assets/shaders/release"/></dataSet><dataSet config="release"><source path="/home/hitasoft/Noor/Lystiq_Joysale_RonnieNjang/SourceCode/lystiqv3.2/parallaxScroll/src/release/assets"/></dataSet></merger>

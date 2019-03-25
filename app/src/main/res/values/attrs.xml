@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ProgressWheel">
+        <attr name="matProg_progressIndeterminate" format="boolean" />
+        <attr name="matProg_barColor" format="color" />
+        <attr name="matProg_rimColor" format="color" />
+        <attr name="matProg_rimWidth" format="dimension" />
+        <attr name="matProg_spinSpeed" format="float" />
+        <attr name="matProg_barSpinCycleTime" format="integer" />
+        <attr name="matProg_circleRadius" format="dimension" />
+        <attr name="matProg_fillRadius" format="boolean" />
+        <attr name="matProg_barWidth" format="dimension" />
+        <attr name="matProg_linearProgress" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundedImageView">
+        <attr name="corner_radius" format="dimension" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="round_background" format="boolean" />
+        <attr name="is_oval" format="boolean" />
+        <attr name="android:scaleType" />
+    </declare-styleable>
+
+    <declare-styleable name="LinkEllipseTextView">
+        <attr name="isLinkable" format="boolean" />
+        <attr name="isEndEllipsable" format="boolean" />
+        <attr name="maxLines" format="integer" />
+        <attr name="ltext" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomFont">
+        <attr name="fonts" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color" />
+        <attr name="pstsUnderlineColor" format="color" />
+        <attr name="pstsDividerColor" format="color" />
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <attr name="pstsDividerPadding" format="dimension" />
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <attr name="pstsScrollOffset" format="dimension" />
+        <attr name="pstsTabBackground" format="reference" />
+        <attr name="pstsShouldExpand" format="boolean" />
+        <attr name="pstsTextAllCaps" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="FloatingActionButton">
+        <attr name="fabType" format="enum">
+            <enum name="circle" value="0" />
+            <enum name="square" value="1" />
+            <enum name="roundedSquare" value="2" />
+        </attr>
+        <attr name="fabSizes" format="enum">
+            <enum name="normal" value="10" />
+            <enum name="mini" value="11" />
+        </attr>
+        <attr name="fabText" format="string" />
+        <attr name="fabTextAllCaps" format="boolean" />
+        <attr name="fabTextColor" format="color" />
+        <attr name="fabElevation" format="dimension" />
+        <attr name="fabColor" format="color" />
+        <attr name="fabIcon" format="integer" />
+        <attr name="fabIconColor" format="color" />
+        <attr name="fabIconPosition" format="enum">
+            <enum name="start" value="30" />
+            <enum name="top" value="31" />
+            <enum name="end" value="32" />
+            <enum name="bottom" value="33" />
+        </attr>
+        <attr name="fabMenuStyle" format="enum">
+            <enum name="popUp" value="20" />
+            <enum name="popDown" value="21" />
+            <enum name="popRight" value="22" />
+            <enum name="popLeft" value="23" />
+        </attr>
+        <attr name="fabMenuGravity">
+            <flag name="start" value="0" />
+            <flag name="end" value="1" />
+            <flag name="bottom" value="2" />
+            <flag name="top" value="4" />
+            <flag name="center_horizontal" value="8" />
+            <flag name="center_vertical" value="16" />
+            <flag name="center" value="31" />
+        </attr>
+    </declare-styleable>
+
+</resources>

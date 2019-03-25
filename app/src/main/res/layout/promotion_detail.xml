@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:clipToPadding="false"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/actionbar"
+        layout="@layout/actionbar_activity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottbar"
+        android:layout_below="@+id/actionbar">
+
+        <RelativeLayout
+            android:id="@+id/frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/actionbar"
+            android:background="@color/white"
+            android:layoutDirection="@string/layout_direction">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:adjustViewBounds="true"
+                android:background="@color/bg"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView"
+                android:layout_gravity="center_vertical"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/itemtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:text="Solid Wood, Engineered wood"
+                    android:textAppearance="@android:style/TextAppearance.Medium"
+                    android:textColor="@color/primaryText"
+                    app:fonts="font_regular.ttf" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imageView"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <com.app.external.CustomTextView
+                            android:id="@+id/valid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/itemtitle"
+                            android:paddingStart="10dp"
+                            android:text="@string/Promotion_type"
+                            android:textAppearance="@android:style/TextAppearance.Small"
+                            android:textColor="@color/secondaryText"
+                            android:textSize="@dimen/text_small"
+                            app:fonts="font_regular.ttf" />
+
+
+                        <com.app.external.CustomTextView
+                            android:id="@+id/addvr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/valid"
+                            android:layout_marginStart="5dp"
+                            android:layout_toStartOf="@+id/lnext"
+                            android:gravity="center_vertical"
+                            android:padding="5dp"
+                            android:text="Advertisement"
+                            android:textAppearance="@android:style/TextAppearance.Medium"
+                            android:textSize="@dimen/text_large"
+                            android:textColor="@color/colorPrimary"
+                            app:fonts="font_regular.ttf" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/vie"
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/actionbar"
+                        android:layout_marginStart="20dp"
+                        android:background="@color/divider" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imageView"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <com.app.external.CustomTextView
+                            android:id="@+id/paid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/itemtitle"
+                            android:paddingStart="10dp"
+                            android:text="@string/Paid_amount"
+                            android:textAppearance="@android:style/TextAppearance.Small"
+                            android:textColor="@color/secondaryText"
+                            android:textSize="@dimen/text_small"
+                            app:fonts="font_regular.ttf" />
+
+                        <com.app.external.CustomTextView
+                            android:id="@+id/amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/valid"
+                            android:layout_marginStart="5dp"
+                            android:layout_toStartOf="@+id/lnext"
+                            android:gravity="center_vertical"
+                            android:padding="5dp"
+                            android:textSize="@dimen/text_large"
+                            android:text="$ 30.00"
+                            android:textAppearance="@android:style/TextAppearance.Medium"
+                            android:textColor="@color/primaryText"
+                            app:fonts="font_regular.ttf" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp">
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/transacid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:text="@string/Transaction_id"
+                        android:textAppearance="@android:style/TextAppearance.Small"
+                        android:textColor="@color/secondaryText"
+                        android:textSize="@dimen/text_small"
+                        app:fonts="font_regular.ttf" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/transid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:padding="5dp"
+                        android:text="HJJYHJDJFHKJSDFH"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:textSize="@dimen/text_large"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dateLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp"
+                    android:visibility="visible">
+
+                    <com.app.external.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:text="@string/up_to"
+                        android:textAppearance="@android:style/TextAppearance.Small"
+                        android:textColor="@color/secondaryText"
+                        android:textSize="@dimen/text_small"
+                        app:fonts="font_regular.ttf" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:padding="5dp"
+                        android:text="Mar 10 2016 -- Apr 10 2016"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:textSize="@dimen/text_large"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp">
+
+                    <com.app.external.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:text="@string/Status"
+                        android:textAppearance="@android:style/TextAppearance.Small"
+                        android:textColor="@color/secondaryText"
+                        android:textSize="@dimen/text_small"
+                        app:fonts="font_regular.ttf" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:padding="5dp"
+                        android:text="Active"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:textSize="@dimen/text_medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center_horizontal">
+
+        <com.app.external.CustomTextView
+            android:id="@+id/promote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:text="@string/repromote_your_list"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:fonts="font_regular.ttf" />
+    </RelativeLayout>
+
+</RelativeLayout>

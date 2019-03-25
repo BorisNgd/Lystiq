@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <string name="app_name">صالة عرض</string>
+ <string name="album_view">حدد ألبوم صور</string>
+ <string name="image_view">انقر لتحديد الصور</string>
+
+ <string name="add">أضف</string>
+ <string name="selected">المحدد</string>
+ <string name="limit_exceeded">٪ d من الصور المسموح بها فقط</string>
+
+ <string name="error_null_cursor">تبا شيء ما حدث بشكل خاطئ!</string>
+
+ <!--Request Permission-->
+ <string name="permission_info">يتطلب التطبيق إذن للتخزين لعرض الصور.</string>
+ <string name="permission_force">يتطلب التطبيق إذن للتخزين لعرض الصور. انقر على الإعدادات وانتقل إلى الأذونات لمنح الإذن.</string>
+ <string name="permission_ok">حسنا</string>
+ <string name="permission_settings">إعدادات</string>
+ <string name="permission_package">صفقة</string>
+ <string name="gallery">صالة عرض</string>
+
+</resources>

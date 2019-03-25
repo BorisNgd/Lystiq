@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lystiqv3.2.iml" filepath="$PROJECT_DIR$/lystiqv3.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/materialsliders/materialsliders.iml" filepath="$PROJECT_DIR$/materialsliders/materialsliders.iml" />
+      <module fileurl="file://$PROJECT_DIR$/multipleimageselect/multipleimageselect.iml" filepath="$PROJECT_DIR$/multipleimageselect/multipleimageselect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pagerIndicator/pagerIndicator.iml" filepath="$PROJECT_DIR$/pagerIndicator/pagerIndicator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parallaxScroll/parallaxScroll.iml" filepath="$PROJECT_DIR$/parallaxScroll/parallaxScroll.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,4 @@
+include ':app', ':multipleimageselect'
+include ':parallaxScroll'
+include ':pagerIndicator'
+include ':materialsliders'

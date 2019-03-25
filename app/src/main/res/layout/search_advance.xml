@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <include
+        android:id="@+id/actionbar"
+        layout="@layout/actionbar_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/saveLay"
+        android:layout_below="@+id/actionbar">
+
+        <RelativeLayout
+            android:id="@+id/mainLay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/locationLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layoutDirection="@string/layout_direction">
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="20dp"
+                    android:background="@color/bg"
+                    android:text="@string/Location"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textColor="@color/secondaryText"
+                    app:fonts="font_regular.ttf" />
+
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/locationName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/location"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/lnext"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text="@string/change_location"
+                    android:textAppearance="@android:style/TextAppearance.Medium"
+                    android:textColor="@color/primaryText"
+                    app:fonts="font_regular.ttf" />
+
+                <ImageView
+                    android:id="@+id/lnext"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/location"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:background="@null"
+                    android:src="@drawable/f_arrow" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/distnceLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/locationLay"
+                android:background="@color/white"
+                android:paddingBottom="5dp">
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/distna"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="20dp"
+                    android:background="@color/bg"                    android:text="@string/Distance"
+                    android:textAppearance="@android:style/TextAppearance.Small"
+                    android:textColor="@color/secondaryText"
+                    app:fonts="font_regular.ttf" />
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/distna"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp">
+
+                    <ImageView
+                        android:id="@+id/home"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/f_hme" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/seektext"
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/home"
+                        android:background="@drawable/cal"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="3dp"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:visibility="invisible"
+                        app:fonts="font_regular.ttf" />
+
+
+                    <com.hitasoft.materialslider.MaterialSeekBar
+                        android:id="@+id/materialSeekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="27dp"
+                        android:layout_toEndOf="@+id/home"
+                        android:layout_toStartOf="@+id/road"
+                        android:max="100"
+                        android:maxHeight="2dp"
+                        android:minHeight="2dp"
+                        android:progressDrawable="@drawable/custom_progress"
+                        android:thumb="@drawable/custom_thumb" />
+
+                    <ImageView
+                        android:id="@+id/road"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/f_road" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/priceLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/distnceLay"
+                android:background="@color/white"
+                android:layoutDirection="@string/layout_direction">
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="20dp"
+                    android:background="@color/bg"
+                    android:text="@string/price"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textColor="@color/secondaryText"
+                    app:fonts="font_regular.ttf" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/price"
+                    android:background="@color/white"
+                    android:layoutDirection="ltr">
+                <LinearLayout
+                    android:id="@+id/priceSeekLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"/>
+                <com.app.external.CustomTextView
+                    android:id="@+id/minPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/priceSeekLay"
+                    android:text="0"
+                    android:textAllCaps="true"
+                    android:layout_alignParentStart="true"
+                    android:padding="10dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorPrimary"
+                    app:fonts="font_regular.ttf" />
+                <com.app.external.CustomTextView
+                    android:id="@+id/maxPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/priceSeekLay"
+                    android:layout_alignParentEnd="true"
+                    android:padding="10dp"
+                    android:text="5000000"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorPrimary"
+                    app:fonts="font_regular.ttf" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/categoryLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/priceLay"
+                android:background="@color/white"
+                android:layoutDirection="@string/layout_direction">
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/categoryName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="20dp"
+                    android:background="@color/bg"                    android:text="@string/Categories"
+                    android:textAppearance="@android:style/TextAppearance.Small"
+                    android:textColor="@color/secondaryText"
+                    app:fonts="font_regular.ttf" />
+
+
+
+                <com.app.external.ExpandableHeightListView
+                    android:id="@+id/category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/categoryName"
+                    android:divider="@color/divider"
+                    android:dividerHeight="0.5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/postetwith"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/categoryLay"
+                android:background="@color/white"
+                android:layoutDirection="@string/layout_direction"
+                android:orientation="vertical">
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/postedwithin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="20dp"
+                    android:background="@color/bg"                    android:text="@string/Posted_within"
+                    android:textAppearance="@android:style/TextAppearance.Small"
+                    android:textColor="@color/secondaryText"
+                    app:fonts="font_regular.ttf" />
+
+
+                <RelativeLayout
+                    android:id="@+id/last24Lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/last24Txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/last24Next"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:text="@string/last24h"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+
+                    <ImageView
+                        android:id="@+id/last24Next"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="10dp"
+                        android:background="@null"
+                        android:src="@drawable/tick"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/divider" />
+
+                <RelativeLayout
+                    android:id="@+id/last7Lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/last7Txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/last7Next"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:text="@string/last7d"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+
+                    <ImageView
+                        android:id="@+id/last7Next"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="10dp"
+                        android:background="@null"
+                        android:src="@drawable/tick"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/divider" />
+
+                <RelativeLayout
+                    android:id="@+id/last30Lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/last30Txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/last30Next"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:text="@string/last30d"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+
+                    <ImageView
+                        android:id="@+id/last30Next"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="10dp"
+                        android:background="@null"
+                        android:src="@drawable/tick"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/divider" />
+
+                <RelativeLayout
+                    android:id="@+id/allproductLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/allproductTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/allproductNext"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:text="@string/all"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+
+                    <ImageView
+                        android:id="@+id/allproductNext"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="10dp"
+                        android:background="@null"
+                        android:src="@drawable/tick"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/shortby"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/postetwith"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:layoutDirection="@string/layout_direction"
+                android:orientation="vertical">
+
+                <com.app.external.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="20dp"
+                    android:background="@color/bg"                    android:text="@string/Sort_by"
+                    android:textAppearance="@android:style/TextAppearance.Small"
+                    android:textColor="@color/secondaryText"
+                    app:fonts="font_regular.ttf" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/white" />
+
+                <RelativeLayout
+                    android:id="@+id/popularLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/popularTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/popularNext"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:text="@string/popular"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+
+                    <ImageView
+                        android:id="@+id/popularNext"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="10dp"
+                        android:background="@null"
+                        android:src="@drawable/tick"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/divider" />
+
+                <RelativeLayout
+                    android:id="@+id/urgentLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/urgentTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/urgentNext"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:text="@string/urgent"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+
+                    <ImageView
+                        android:id="@+id/urgentNext"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="10dp"
+                        android:background="@null"
+                        android:src="@drawable/tick"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_below="@+id/urgentTxt"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@color/divider" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/highLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/highTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/highNext"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:text="@string/hightlow"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+
+                    <ImageView
+                        android:id="@+id/highNext"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="10dp"
+                        android:background="@null"
+                        android:src="@drawable/tick"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/divider" />
+
+                <RelativeLayout
+                    android:id="@+id/lowLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/lowTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/lowNext"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:text="@string/lowthigh"
+                        android:textAppearance="@android:style/TextAppearance.Medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+
+                    <ImageView
+                        android:id="@+id/lowNext"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="10dp"
+                        android:background="@null"
+                        android:src="@drawable/tick"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/progress"
+        android:layout_width="@dimen/progress_size"
+        android:layout_height="@dimen/progress_size"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/progressColor"
+        app:indicatorName="BallPulseIndicator" />
+
+    <LinearLayout
+        android:id="@+id/saveLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <com.app.external.CustomTextView
+            android:id="@+id/reset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorSecondary"
+            android:gravity="center"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:text="@string/reset"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:fonts="font_regular.ttf" />
+
+        <com.app.external.CustomTextView
+            android:id="@+id/apply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:text="@string/apply"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:fonts="font_regular.ttf" />
+    </LinearLayout>
+
+</RelativeLayout>

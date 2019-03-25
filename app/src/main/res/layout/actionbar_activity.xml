@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/top"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimary"
+    android:layoutDirection="ltr"
+    android:minHeight="?attr/actionBarSize">
+
+    <ImageView
+        android:id="@+id/backbtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:padding="10dp"
+        android:src="@drawable/back"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/cancelbtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:padding="10dp"
+        android:src="@drawable/cancel"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/top23"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:minHeight="?attr/actionBarSize">
+
+        <com.app.external.RoundedImageView
+            android:id="@+id/userImg"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/appicon"
+            android:scaleType="centerCrop"
+            android:visibility="invisible"
+            app:corner_radius="100dip"
+            app:round_background="true" />
+
+        <com.app.external.CustomTextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/userImg"
+            android:layout_toStartOf="@+id/printbtn"
+            android:singleLine="true"
+            android:text="Name"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone"
+            app:fonts="font_regular.ttf" />
+
+        <com.app.external.CustomTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:paddingEnd="45dp"
+            android:paddingStart="45dp"
+            android:singleLine="true"
+            android:text=""
+            android:ellipsize="end"
+            android:textColor="@color/colorAccent"
+            android:textSize="22sp"
+            android:visibility="visible"
+            app:fonts="font_regular.ttf" />
+
+        <com.app.external.CustomTextView
+            android:id="@+id/cornerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="45dp"
+            android:layout_toStartOf="@+id/printbtn"
+            android:singleLine="true"
+            android:text="Name"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone"
+            app:fonts="font_regular.ttf" />
+
+        <RelativeLayout
+            android:id="@+id/searchLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="45dp"
+            android:layout_toStartOf="@+id/selectbtn"
+            android:background="@drawable/home_items_curve_shape"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/search_gray" />
+
+            <com.app.external.CustomEditText
+                android:id="@+id/titleEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/searchIcon"
+                android:layout_toStartOf="@+id/resetbtn"
+                android:background="@color/white"
+                android:hint="@string/search"
+                android:imeOptions="actionSearch"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                android:padding="7dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@drawable/cursor"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/resetbtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:padding="8dp"
+                android:src="@drawable/cancel"
+                android:tint="@color/colorPrimary"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/selectbtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:padding="10dp"
+            android:src="@drawable/select"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/printbtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_toStartOf="@+id/settingbtn"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:padding="10dp"
+            android:src="@drawable/print"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/settingbtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:padding="10dp"
+            android:src="@drawable/option_icon"
+            android:visibility="gone" />
+
+        <com.app.external.CustomTextView
+            android:id="@+id/productTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="30dp"
+            android:layout_toEndOf="@+id/cornerTitle"
+            android:layout_toStartOf="@+id/productImg"
+            android:gravity="end"
+            android:maxLines="1"
+            android:padding="7dp"
+            android:singleLine="true"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone"
+            app:fonts="font_regular.ttf" />
+
+        <com.app.external.RoundedImageView
+            android:id="@+id/productImg"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:background="@color/bg"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:corner_radius="100dip"
+            app:round_background="true" />
+    </RelativeLayout>
+</RelativeLayout>

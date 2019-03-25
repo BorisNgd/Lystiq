@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLay"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layoutDirection="@string/layout_direction"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_items_curve_shape"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/imageLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.app.external.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/singleImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:scaleType="centerCrop"
+                app:corner_radius="3dp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:background="@drawable/blacktrans" />
+
+            <com.app.external.CustomTextView
+                android:id="@+id/postedTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="0 hours ago"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:fonts="font_regular.ttf" />
+
+            <LinearLayout
+                android:id="@+id/lin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="-5dp">
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/productType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/urgentbg"
+                    android:paddingBottom="5dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingTop="13dp"
+                    android:text="Urgent"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    app:fonts="font_regular.ttf" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/detailLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.app.external.CustomTextView
+                android:id="@+id/priceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:maxLines="1"
+                android:text="$ 0"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/primaryText"
+                app:fonts="font_bold.ttf" />
+
+            <com.app.external.CustomTextView
+                android:id="@+id/itemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="3dp"
+                android:maxLines="1"
+                android:text="itemName"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="@dimen/text_medium"
+                android:textColor="@color/primaryText"
+                app:fonts="font_regular.ttf" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dip"
+                android:layout_marginTop="3dp"
+                android:background="@color/divider" />
+
+            <com.app.external.CustomTextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="3dp"
+                android:singleLine="true"
+                android:text="location"
+                android:textColor="@color/secondaryText"
+                android:textSize="12sp"
+                app:fonts="font_regular.ttf" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

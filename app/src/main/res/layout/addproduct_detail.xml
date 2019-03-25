@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <include
+        android:id="@+id/actionbar"
+        layout="@layout/actionbar_activity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <ScrollView
+        android:id="@+id/sview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/saveLay"
+        android:layout_below="@+id/actionbar"
+        android:clipToPadding="false"
+        android:isScrollContainer="true"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:id="@+id/parentLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:focusable="true"
+            android:layoutDirection="@string/layout_direction"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/imgLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:background="@color/bg"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:visibility="visible">
+
+                <com.app.external.HorizontalListView
+                    android:id="@+id/imageList"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:clipToPadding="false"
+                    android:paddingStart="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/detailLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <com.app.external.CustomEditText
+                    android:id="@+id/productName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:hint="@string/what_are_you_selling"
+                    android:inputType="textCapSentences|text"
+                    android:maxLength="70"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/secondaryText"
+                    android:textSize="@dimen/text_medium" />
+
+                <com.app.external.CustomEditText
+                    android:id="@+id/productDes"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:background="@color/white"
+                    android:gravity="top"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/describe_your_listing"
+                    android:inputType="textCapSentences|textMultiLine|text"
+                    android:padding="10dp"
+                    android:textColorHint="@color/secondaryText"
+                    android:textSize="@dimen/text_medium" />
+
+
+                <RelativeLayout
+                    android:id="@+id/givingLay"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:background="@color/white"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/givingAwaySwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:theme="@style/SwitchTheme" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/givingAwayTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/giving_away"
+                        android:textSize="@dimen/text_medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/priceLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:layoutDirection="@string/layout_direction"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <com.app.external.CustomTextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.45"
+                            android:singleLine="true"
+                            android:gravity="start|center_vertical"
+                            android:text="@string/price"
+                            android:textSize="@dimen/text_medium"
+                            android:textColor="@color/primaryText"
+                            app:fonts="font_regular.ttf" />
+
+                        <com.app.external.CustomEditText
+                            android:id="@+id/price"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.55"
+                            android:background="@color/white"
+                            android:gravity="start|center"
+                            android:hint="@string/enter_your_price"
+                            android:inputType="numberDecimal"
+                            android:layoutDirection="ltr"
+                            android:singleLine="true"
+                            app:fonts="font_regular.ttf"
+                            android:textColor="@color/secondaryText"
+                            android:textSize="@dimen/text_medium"
+                            android:textColorHint="@color/secondaryText" />
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:background="@color/divider" />
+
+                        <Spinner
+                            android:id="@+id/currency"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="5dp"
+                            android:background="@null"
+                            android:gravity="end"
+                            android:prompt="@string/selectcategory"
+                            android:textAppearance="@android:style/TextAppearance.Small" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/categoryLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:background="@color/white"
+                    android:layout_marginTop="10dp">
+
+                    <com.app.external.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:singleLine="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/category"
+                        android:textSize="@dimen/text_medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/catArrow"
+                        android:gravity="end"
+                        android:maxWidth="180dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:singleLine="true"
+                        android:text="@string/select_your_category"
+                        android:textSize="@dimen/text_medium"
+                        android:textColor="@color/secondaryText"
+                        app:fonts="font_regular.ttf" />
+
+                    <ImageView
+                        android:id="@+id/catArrow"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:background="@null"
+                        android:src="@drawable/f_arrow"
+                        android:tint="@color/secondaryText" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/divider" />
+
+                <RelativeLayout
+                    android:id="@+id/locationLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:background="@color/white"
+                    android:padding="10dp"
+                    >
+
+                    <com.app.external.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:singleLine="true"
+                        android:text="@string/location"
+                        android:textSize="@dimen/text_medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/locArrow"
+                        android:ellipsize="end"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:gravity="end"
+                        android:maxLines="1"
+                        android:maxWidth="180dp"
+                        android:text="@string/set_your_location"
+                        android:textSize="@dimen/text_medium"
+                        android:textColor="@color/secondaryText"
+                        app:fonts="font_regular.ttf" />
+
+                    <ImageView
+                        android:id="@+id/locArrow"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:background="@null"
+                        android:src="@drawable/f_arrow"
+                        android:tint="@color/secondaryText" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bottomLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/conditionLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:padding="10dp">
+
+                    <com.app.external.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:singleLine="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/itemcondition"
+                        android:textSize="@dimen/text_medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/itemCondition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/condArrow"
+                        android:maxWidth="180dp"
+                        android:singleLine="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text=""
+                        android:textSize="@dimen/text_medium"
+                        android:textColor="@color/secondaryText"
+                        app:fonts="font_regular.ttf" />
+
+                    <ImageView
+                        android:id="@+id/condArrow"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:background="@null"
+                        android:src="@drawable/f_arrow"
+                        android:tint="@color/secondaryText" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/divider" />
+
+                <RelativeLayout
+                    android:id="@+id/exchangeLay"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:background="@color/white"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/exchangeSwitch"
+                        android:layout_width="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:theme="@style/SwitchTheme" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/exchangeTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/exchangebuy"
+                        android:textSize="@dimen/text_medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/divider" />
+
+                <RelativeLayout
+                    android:id="@+id/offerLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/chatSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:layout_centerVertical="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:theme="@style/SwitchTheme" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/offerTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/fixedprice"
+                        android:textSize="@dimen/text_medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/instantLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/buyLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/buySwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:theme="@style/SwitchTheme" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/buyTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="@string/instantbuy"
+                        android:textSize="@dimen/text_medium"
+                        android:textColor="@color/primaryText"
+                        app:fonts="font_regular.ttf" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/divider" />
+
+                <LinearLayout
+                    android:id="@+id/buynowLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/paypalLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:visibility="visible">
+
+                        <com.app.external.CustomTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.25"
+                            android:singleLine="true"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="@string/paypalid"
+                            android:textSize="@dimen/text_medium"
+                            android:textColor="@color/primaryText"
+                            app:fonts="font_regular.ttf" />
+
+                        <com.app.external.CustomEditText
+                            android:id="@+id/paypalId"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.45"
+                            android:background="@color/white"
+                            android:gravity="end"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:hint="@string/enter_paypalid"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:textSize="@dimen/text_medium"
+                            android:textColorHint="@color/secondaryText" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/divider" />
+
+                    <LinearLayout
+                        android:id="@+id/shippingLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:visibility="visible">
+
+                        <com.app.external.CustomTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.25"
+                            android:singleLine="true"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="@string/Shipping_fee"
+                            android:textSize="@dimen/text_medium"
+                            android:textColor="@color/primaryText"
+                            app:fonts="font_regular.ttf" />
+
+                        <com.app.external.CustomEditText
+                            android:id="@+id/shippingFee"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.45"
+                            android:background="@color/white"
+                            android:digits="0123456789."
+                            android:gravity="end"
+                            android:hint="@string/enter_shipping_cost"
+                            android:inputType="numberDecimal"
+                            android:maxLength="9"
+                            android:singleLine="true"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:textSize="@dimen/text_medium"
+                            android:textColorHint="@color/secondaryText" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/bg" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/saveLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <com.app.external.CustomTextView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorSecondary"
+            android:gravity="center"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_large"
+            app:fonts="font_regular.ttf" />
+
+        <com.app.external.CustomTextView
+            android:id="@+id/post"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="15dp"
+            android:singleLine="true"
+            android:text="@string/post"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_large"
+            app:fonts="font_regular.ttf" />
+    </LinearLayout>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/progress"
+        android:layout_width="@dimen/progress_size"
+        android:layout_height="@dimen/progress_size"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/progressColor"
+        app:indicatorName="BallPulseIndicator" />
+
+</RelativeLayout>

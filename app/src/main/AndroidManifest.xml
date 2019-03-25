@@ -1,0 +1,279 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.app.lystiq">
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="com.ram.googlemapsv2.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <permission
+        android:name="android.permission.FLASHLIGHT"
+        android:permissionGroup="android.permission-group.HARDWARE_CONTROLS"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="true" />
+
+    <application
+        android:name="com.app.lystiq.JoysaleApplication"
+        android:allowBackup="true"
+        android:configChanges="layoutDirection|locale"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+    <activity
+            android:name="com.app.lystiq.SplashActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            tools:replace="android:theme"/>
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider650573488732916"
+            android:exported="true" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="@string/file_provider_authority"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+        <activity
+            android:name="com.app.lystiq.FragmentMainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.app.lystiq.WelcomeActivity"
+            android:theme="@style/WelcomeCustom" />
+        <!--android:screenOrientation="portrait"-->
+        <activity
+            android:name="com.app.lystiq.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.app.lystiq.CameraActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CameraTheme" />
+        <activity
+            android:name="com.app.lystiq.AddProductDetail"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.app.lystiq.MessageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.ChatActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.app.lystiq.LocationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.SearchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.SearchAdvance"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.SubCategory"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.CategoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.DetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.app.lystiq.CommentsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name="com.app.lystiq.Help"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.AboutUs"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.ExchangeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.ExchangeView"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.PromotionDetail"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.MyPromotions"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.CreatePromote"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.CreateExchange"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.ChangePassword"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.EditProfile"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.EditProfilePhoto"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.SelectCategory"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.Profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.Notification"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.SingleView"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.Language"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.app.lystiq.ViewFullImage"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCusTheme" />
+        <activity
+            android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <data android:scheme="com.app.lystiq.braintree" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.app.lystiq.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.app.lystiq.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="my_channel_01"/>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAEdi3PbIUKNCNxaHZQWlG0qyal5tQ3rXU" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.facebook.accountkit.ApplicationName"
+            android:value="@string/app_name" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/FACEBOOK_APP_ID"
+            tools:replace="android:value"/>
+        <meta-data
+            android:name="com.facebook.accountkit.ClientToken"
+            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
+
+        <activity
+            android:name="com.facebook.accountkit.ui.AccountKitActivity"
+            android:theme="@style/AppLoginTheme"
+            tools:replace="android:theme" />
+
+
+    </application>
+
+</manifest>

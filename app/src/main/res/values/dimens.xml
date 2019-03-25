@@ -1,0 +1,60 @@
+<resources>
+
+    <dimen name="text_very_small">11sp</dimen>
+    <dimen name="text_small">13sp</dimen>
+    <dimen name="text_normal">15sp</dimen>
+    <dimen name="text_medium">17sp</dimen>
+    <dimen name="text_large">19sp</dimen>
+    <dimen name="text_very_large">21sp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <dimen name="slidingmenu_offset">300dp</dimen>
+    <dimen name="slidingmenu_Behind_offset">300dp</dimen>
+    <dimen name="slidingmenu_Behind_offset_600dp">300dp</dimen>
+    <dimen name="list_padding">10dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+    <dimen name="text_size_">20sp</dimen>
+    <dimen name="margin">10dp</dimen>
+
+    <integer name="num_cols">1</integer>
+
+    <bool name="isTablet">false</bool>
+
+    <!-- Default Parallax ImageView Height  -->
+    <dimen name="size_default_height">200dp</dimen>
+
+    <dimen name="imageview_height">250dp</dimen>
+
+    <dimen name="tab_height">50dp</dimen>
+    <dimen name="progress_size">40dp</dimen>
+    <integer name="progress">0</integer>
+
+    <dimen name="header_height">288dp</dimen>
+    <dimen name="min_header_height">250dp</dimen>
+    <dimen name="header_logo_size">80dp</dimen>
+    <dimen name="divider_height">0.7dp</dimen>
+    <dimen name="text_size_small">13sp</dimen>
+    <dimen name="item_offset">5dp</dimen>
+
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="default_margin_for_mini">23dp</dimen>
+    <dimen name="fab_progress_default_thickness">5dp</dimen>
+    <dimen name="fab_default_elevation">8dp</dimen>
+    <dimen name="fab_size_normal">56dp</dimen>
+    <dimen name="fab_size_mini">40dp</dimen>
+    <dimen name="fab_size_minimum">40dp</dimen>
+    <dimen name="fab_circle_radius">500dp</dimen>
+    <dimen name="fab_rounded_radius">10dp</dimen>
+    <dimen name="fab_background_padding">20dp</dimen>
+    <dimen name="fab_rounded_square_shadow_translation">7dp</dimen>
+    <dimen name="fab_icon_size">24dp</dimen>
+    <dimen name="fab_text_horizontal_margin_normal">16dp</dimen>
+    <dimen name="fab_text_horizontal_margin_mini">10dp</dimen>
+    <dimen name="fab_step_size">2dp</dimen>
+    <dimen name="fab_menu_item_margin">8dp</dimen>
+
+</resources>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="@string/layout_direction">
+
+    <RelativeLayout
+        android:id="@+id/sharelay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:elevation="15dp">
+
+        <RelativeLayout
+            android:id="@+id/rlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/invite_dialog_bg"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <com.app.external.CustomTextView
+                android:id="@+id/contactName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                android:text="@string/invite_friends"
+                android:textAppearance="@android:style/TextAppearance.Large"
+                android:textColor="@color/primaryText"
+                app:fonts="font_bold.ttf" />
+
+            <com.app.external.CustomTextView
+                android:id="@+id/sharetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contactName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:lineSpacingExtra="3dp"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:text="@string/invite_des"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/primaryText"
+                app:fonts="font_regular.ttf" />
+
+            <RelativeLayout
+                android:id="@+id/offerLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sharetext"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/fbLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/messenger_bg">
+
+                    <ImageView
+                        android:id="@+id/fbBtn"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:padding="10dp"
+                        android:src="@drawable/messenger" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/fbTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/invite_messenger"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:fonts="font_regular.ttf" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/whatsaplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/fbLay"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/whatsapp_bg">
+
+                    <ImageView
+                        android:id="@+id/whatsappBtn"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:padding="10dp"
+                        android:src="@drawable/whatsapp" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/whatsappTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/invite_whatsapp"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:fonts="font_regular.ttf" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/emaillay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/whatsaplay"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/email_bg">
+
+                    <ImageView
+                        android:id="@+id/emailBtn"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:padding="10dp"
+                        android:src="@drawable/mail" />
+
+                    <com.app.external.CustomTextView
+                        android:id="@+id/emailTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/invite_email"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        app:fonts="font_regular.ttf" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <com.app.external.RoundedImageView
+            android:id="@+id/contactImg"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignBaseline="@+id/llay"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/appicon"
+            app:border_color="@color/white"
+            app:border_width="7dp"
+            app:corner_radius="100dip"
+            app:round_background="true" />
+
+        <LinearLayout
+            android:id="@+id/llay"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_above="@+id/rlay"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

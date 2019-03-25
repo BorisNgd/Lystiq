@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#88000000"
+    android:layoutDirection="@string/layout_direction"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/invite_dialog_bg"
+        android:elevation="15dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/numberLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <com.app.external.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:padding="15dp"
+                android:text="@string/enter_your_num"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/primaryText"
+                android:visibility="visible"
+                app:fonts="font_bold.ttf" />
+
+            <com.app.external.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:text="@string/enter_your_num_des"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/primaryText"
+                android:visibility="visible"
+                app:fonts="font_regular.ttf" />
+
+            <RelativeLayout
+                android:id="@+id/phoneVerifyLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="horizontal">
+
+                <com.app.external.CustomEditText
+                    android:id="@+id/countryCode"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:focusableInTouchMode="true"
+                    android:hint="@string/country_code"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/primaryText"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fonts="font_regular.ttf" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="0.5dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/countryCode"
+                    android:background="@color/divider" />
+
+                <com.app.external.CustomEditText
+                    android:id="@+id/mobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/view"
+                    android:background="@null"
+                    android:focusableInTouchMode="true"
+                    android:hint="@string/enter_mobile"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/primaryText"
+                    android:textSize="14sp"
+                    android:visibility="visible"
+                    app:fonts="font_regular.ttf" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phoneVerifyLayout"
+                android:paddingBottom="10dp"
+                android:paddingEnd="10dp">
+
+                <ProgressBar
+                    android:id="@+id/progress1"
+                    style="?android:attr/android:progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/verify"
+                    android:visibility="gone" />
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/verify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/cancel"
+                    android:padding="10dp"
+                    android:text="@string/verify"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:visibility="visible"
+                    app:fonts="font_bold.ttf" />
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="10dp"
+                    android:text="@string/cancel"
+                    android:textColor="@color/primaryText"
+                    android:textSize="16sp"
+                    android:visibility="visible"
+                    app:fonts="font_bold.ttf" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/otpLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.app.external.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:maxLines="1"
+                android:padding="15dp"
+                android:text="@string/enter_otp"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/primaryText"
+                android:visibility="visible"
+                app:fonts="font_bold.ttf" />
+
+            <com.app.external.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:text="@string/enter_otp_des"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="@color/primaryText"
+                android:visibility="visible"
+                app:fonts="font_regular.ttf" />
+
+            <com.app.external.CustomEditText
+                android:id="@+id/otp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="15dp"
+                android:background="@null"
+                android:focusableInTouchMode="true"
+                android:hint="OTP"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
+                android:textColor="@color/primaryText"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:fonts="font_regular.ttf" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingEnd="10dp">
+
+                <ProgressBar
+                    android:id="@+id/progress2"
+                    style="?android:attr/android:progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/confirm"
+                    android:visibility="gone" />
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/cancel2"
+                    android:padding="10dp"
+                    android:text="@string/confirm"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:visibility="visible"
+                    app:fonts="font_bold.ttf" />
+
+                <com.app.external.CustomTextView
+                    android:id="@+id/cancel2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="10dp"
+                    android:text="@string/cancel"
+                    android:textColor="@color/primaryText"
+                    android:textSize="16sp"
+                    android:visibility="visible"
+                    app:fonts="font_bold.ttf" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

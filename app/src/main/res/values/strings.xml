@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Non translatable Strings -->
+    <string name="app_name" translatable="false">Lystiq</string>
+    <string name="loc" translatable="false">&#xf041;</string>
+    <string name="down" translatable="false">&#xf107;</string>
+    <string name="dot" translatable="false">&#xf111;</string>
+    <string name="progress_name" translatable="false">BallPulseSync</string>
+    <string name="chatfilter" translatable="false">abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ ()*-+=.,@&amp;?#!$%:_&lt;&gt;&quot;^ </string>
+    <string name="Passwordfilter" translatable="false">abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ.$@#%-*:?!_,&amp;</string>
+    <string name="Emailfilter" translatable="false">abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ.@-_</string>
+    <string name="fullnamefilter" translatable="false">abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ .@-_</string>
+    <string name="password_hint" translatable="false">********************</string>
+    <string name="layout_direction" translatable="false">0</string>
+    <string name="select_your_category" translatable="false">Select your category</string>
+    <string name="file_provider_authority" translatable="false">com.app.external.ImagePicker</string>
+
+    //Facebook Details
+    <string name="FACEBOOK_APP_ID" translatable="false">650573488732916</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN" translatable="false">594bc465a1851d65892ac8b649e28c47</string>
+
+    <string-array name="languages">
+        <item>English</item>
+        <item>French</item>
+        <!--<item>Arabic</item>-->
+        <!--  <item>German</item>
+          <item>Spanish</item>
+          <item>Swedish</item>-->
+    </string-array>
+
+    <string-array name="languageCode" translatable="false">
+        <item>en</item>
+        <item>fr</item>
+        <!--<item>ar</item>-->
+        <!--   <item>de</item>
+          <item>es</item>
+          <item>sv</item>-->
+    </string-array>
+
+    <!--Translatable Strings-->
+    <string name="your_location">Your location is verified</string>
+    <string name="location_temp">World Wide</string>
+    <string name="please_fill">Please fill out this field</string>
+    <string name="pleasewait">Just a moment</string>
+    <string name="please_fill_all">You’ve to fill all the fields</string>
+    <string name="add_your_stuff">Add Your Stuff</string>
+    <string name="image_uploaded">Uploaded!</string>
+    <string name="of">of</string>
+    <string name="more_items_from">More items from</string>
+    <string name="what_are_you_selling">What are you selling?</string>
+    <string name="describe_your_listing">Describe your listing</string>
+    <string name="enter_your_price">Enter your price</string>
+    <string name="enter_valid_ship">Enter valid shipping</string>
+    <string name="please_upload_image">Select at least one image</string>
+    <string name="reqd_valid_price">Enter valid price</string>
+    <string name="price">Price</string>
+    <string name="selectcategory">Choose category</string>
+    <string name="itemcondition">Product condition</string>
+    <string name="set_your_location">Pin your location</string>
+    <string name="category">Category</string>
+    <string name="location">Location</string>
+    <string name="exchangebuy">Exchange to Buy</string>
+    <string name="fixedprice">Fixed Price</string>
+    <string name="post">Post</string>
+    <string name="cancel">Cancel</string>
+    <string name="sorry">Sorry!</string>
+    <string name="posting_list">Uploading..</string>
+    <string name="successfully_posted">Product listed successfully</string>
+    <string name="promote_listing">Promote your listing</string>
+    <string name="choose_category">Categorize your listing</string>
+    <string name="choose_condition">Choose product condition</string>
+    <string name="price_should">Enter a valid price</string>
+    <string name="your_product">Product added</string>
+    <string name="your_product_not">Failed to upload. Try again later.</string>
+    <string name="image_cannot">Failed to upload. Try again later.</string>
+    <string name="image_uploading">Uploading..</string>
+    <string name="noItem">No items found</string>
+    <string name="noData">Try something else</string>
+    <string name="noOrder">No orders yet</string>
+    <string name="noSales">No sales yet</string>
+    <string name="noExhanges">No exchanges</string>
+    <string name="camera_not_found">Camera not started</string>
+    <string name="please_add_image">Select/Snap at least one image</string>
+    <string name="please_select_images">Please select the images</string>
+    <string name="your_device_doesnt_flash">No flash on your device</string>
+    <string name="gallery">GALLERY</string>
+    <string name="next">NEXT</string>
+    <string name="categories">Categories</string>
+    <string name="changepassword">Change password</string>
+    <string name="currentpassword">Current password</string>
+    <string name="newpassword">New password</string>
+    <string name="confirmpassword">Confirm password</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
+    <string name="wrongpassword">Incorrect Password</string>
+    <string name="passwordmismatched">Passwords mismatch</string>
+    <string name="passwordshould">Minimum six characters required</string>
+    <string name="youroldandnew">Do not reuse your existing password!</string>
+    <string name="symbols_not_supported">Sorry! Symbols not supported!</string>
+    <string name="is_typing">typing..</string>
+    <string name="please_enter_message">Type your message</string>
+    <string name="writemessage">Type something</string>
+    <string name="send">Send</string>
+    <string name="comments">Comments</string>
+    <string name="addcomments">Post</string>
+    <string name="nocomments">No comments</string>
+    <string name="please_give_comments">Leave a comment</string>
+    <string name="exchangetobuy">Exchange to buy</string>
+    <string name="create">Create</string>
+    <string name="please_select_exchange">At least select one item</string>
+    <string name="create_promotion">Promotion options</string>
+    <string name="urgent">Urgent</string>
+    <string name="advertisement">Advertisement</string>
+    <string name="views">Views</string>
+    <string name="likes">Likes</string>
+    <string name="back_to_sale">Back to sale</string>
+    <string name="mark_as_available">Mark as Available</string>
+    <string name="promote_your_product">Boost your ad</string>
+    <string name="make_an_offer">Make an offer</string>
+    <string name="delete_product">Remove</string>
+    <string name="mark_as_sold">Mark as sold</string>
+    <string name="create_exchange">Enable exchange</string>
+    <string name="undo_report">Undo report</string>
+    <string name="report_product">Report</string>
+    <string name="somethingwrong">Something’s not right</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="reallySignOut">Are you sure to Signout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="change">Change</string>
+    <string name="your_changes_saved">Your changes have been saved!</string>
+    <string name="Edit">Edit</string>
+    <string name="Name">NAME</string>
+    <string name="Username">USERNAME</string>
+    <string name="Password">PASSWORD</string>
+    <string name="Email">EMAIL</string>
+    <string name="verified">Verified</string>
+    <string name="unverified">Unverified</string>
+    <string name="Phone">PHONE</string>
+    <string name="link_your_account">Link your account</string>
+    <string name="language">Language</string>
+    <string name="logout">Logout</string>
+    <string name="save">Save</string>
+    <string name="take">Take</string>
+    <string name="retake">Retake</string>
+    <string name="use_photo">Use Photo</string>
+    <string name="please_take_snap">Please take a snap</string>
+    <string name="incoming">Incoming</string>
+    <string name="outgoing">Outgoing</string>
+    <string name="success">Success</string>
+    <string name="failed">Failed</string>
+    <string name="myexchange">My Exchanges</string>
+    <string name="exchange_status_chngd">Exchange status changed</string>
+    <string name="gps_settings">GPS settings</string>
+    <string name="gps_notenabled">GPS not enable. Go to settings?</string>
+    <string name="settings">Settings</string>
+    <string name="reallyExit">Exit now?</string>
+    <string name="exit">Exit</string>
+    <string name="keep">Keep</string>
+    <string name="your_not_logged">Log in to proceed</string>
+    <string name="login">Login</string>
+    <string name="sell_your_stuff">Post your ad</string>
+    <string name="chat">Chat</string>
+    <string name="myprofile">My profile</string>
+    <string name="help">Help</string>
+    <string name="remove_location">Remove Location</string>
+    <string name="set_location">Set location</string>
+    <string name="please_verify_mail">Verify your email</string>
+    <string name="please_type_mail">Provide your email</string>
+    <string name="please_type_password">Type your password</string>
+    <string name="skip">Skip</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgetpassword">Forgot password?</string>
+    <string name="or">or</string>
+    <string name="signup_not_member">New user? Sign up</string>
+    <string name="messages">Messages</string>
+    <string name="noMessage">Nothing to display</string>
+    <string name="my_promotions">My promotions</string>
+    <string name="expired">Expired</string>
+    <string name="notifications">Notifications</string>
+    <string name="noNotification">No notifications yet</string>
+    <string name="profile_problem">The process is temporarily disabled for this profile by admin. Try again later.</string>
+    <string name="server_load_problem">Sorry, Something is not right.</string>
+    <string name="my_listing">My listings</string>
+    <string name="liked">Liked</string>
+    <string name="followers">Followers</string>
+    <string name="followings">Following</string>
+    <string name="pay_and_promote">Pay and Promote</string>
+    <string name="please_select_promotion">Select your preferred promotion type</string>
+    <string name="payment_error">Transaction failed due to server maintenance. Try later.</string>
+    <string name="ok">OK</string>
+    <string name="error">Error!</string>
+    <string name="checkconnection">Check your network connection and try again</string>
+    <string name="alert">Alert!</string>
+    <string name="urgent_des">Promote your list for extended reach through premium placements and attract buyers easily </string>
+    <string name="pay_and_highlight">Pay and highlight</string>
+    <string name="Promotion_type">PROMOTION TYPE</string>
+    <string name="Paid_amount">PAID AMOUNT</string>
+    <string name="Transaction_id">TRANSACTION ID</string>
+    <string name="up_to">UP TO</string>
+    <string name="Status">STATUS</string>
+    <string name="repromote_your_list">Repromote your list</string>
+    <string name="register">Sign up</string>
+    <string name="fullname">Full name</string>
+    <string name="username">User name</string>
+    <string name="already_member_login">Already a member? Login</string>
+    <string name="filter">Filter</string>
+    <string name="category_problem">Try again to retrieve category</string>
+    <string name="Location">LOCATION</string>
+    <string name="change_location">Change Location</string>
+    <string name="Distance">DISTANCE</string>
+    <string name="Categories">CATEGORIES</string>
+    <string name="Posted_within">POSTED WITHIN</string>
+    <string name="Sort_by">SORT BY</string>
+    <string name="reset">Reset</string>
+    <string name="apply">Apply</string>
+    <string name="startmaking">Make money online by selling or buying used stuff near you</string>
+    <string name="search">Search</string>
+    <string name="addcomment">Post comment</string>
+    <string name="signup">Sign up</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="network_error">Network error!</string>
+    <string name="network_error_des">Make sure that you are connected to the internet</string>
+    <string name="go_settings">Settings</string>
+    <string name="world_wide">World Wide</string>
+    <string name="promotion_details">Promotion Details</string>
+    <string name="back_sale_confirmation">Mark as available?</string>
+    <string name="sold_product_confirmation">Mark as sold?</string>
+    <string name="delete_product_confirmation">Delete this product?</string>
+    <string name="report_product_confirmation">Report this product?</string>
+    <string name="undoreport_product_confirmation">Un Report?</string>
+    <string name="type_your_offer">Your price?</string>
+    <string name="type_your_message">Type your message</string>
+    <string name="offer_should_not_above">Offer price should be less than the listing price</string>
+    <string name="offer_should_not_zero">Enter a valid offer price</string>
+    <string name="noFollowing">You’re not following anyone</string>
+    <string name="noFollowers">No followers</string>
+    <string name="ads_des">Promote your best products so they appear in the most relevant places. Set up targeting ads so the right people see your ad.</string>
+    <string name="listing">Listings</string>
+    <string name="need_permission_to_access">Ask for permission!</string>
+    <string name="storage_permission_access">Storage access allowed</string>
+    <string name="camera_permission_access">Camera access allowed</string>
+    <string name="storage_camera_permisssion">In-app permission enabled</string>
+    <string name="location_permission_access">You can now access your location</string>
+    <string name="checkout">Check out</string>
+    <string name="sellername">SELLER NAME</string>
+    <string name="address">Address</string>
+    <string name="price_details">PRICING</string>
+    <string name="shipping_fee">SHIPPING FEE</string>
+    <string name="order_total">ORDER TOTAL</string>
+    <string name="pay_now">Pay</string>
+    <string name="nickname">NICKNAME</string>
+    <string name="address1">ADDRESS1</string>
+    <string name="address2">ADDRESS2</string>
+    <string name="name">NAME</string>
+    <string name="phone">PHONE</string>
+    <string name="city">CITY</string>
+    <string name="state">STATE</string>
+    <string name="country">COUNTRY</string>
+    <string name="zipcode">ZIPCODE</string>
+    <string name="my_address">My address</string>
+    <string name="select_address">Select address</string>
+    <string name="add_address">Add address</string>
+    <string name="edit_address">Edit address</string>
+    <string name="continue_add">Continue</string>
+    <string name="add_new_address">ADD NEW ADDRESS</string>
+    <string name="edit">Edit</string>
+    <string name="remove">Remove</string>
+    <string name="mark_default">Set as default</string>
+    <string name="myorders_sales">My orders &amp; sales</string>
+    <string name="Default">DEFAULT</string>
+    <string name="select_country">Select country</string>
+    <string name="select_shipping_address">Please choose your shipping address</string>
+    <string name="myorders">My orders</string>
+    <string name="mysales">My sales</string>
+    <string name="item_shipped">Shipped</string>
+    <string name="under_processing">In process</string>
+    <string name="order_canceled">Order cancelled</string>
+    <string name="item_delivered">Delivered</string>
+    <string name="claimed">Claim sent</string>
+    <string name="pending">Pending</string>
+    <string name="paid">Paid</string>
+    <string name="buynow">Buy</string>
+    <string name="instantbuy">Buy now</string>
+    <string name="paypalid">PayPal ID</string>
+    <string name="enter_paypalid">Enter your PayPal ID</string>
+    <string name="Shipping_fee">Ship. cost</string>
+    <string name="enter_shipping_cost">Enter shipping cost</string>
+    <string name="please_verify_paypalid">PayPal ID should be a valid email ID</string>
+    <string name="problem_location">Unable to locate you</string>
+    <string name="shipping_date">SHIPPING DATE</string>
+    <string name="courier_name">COURIER NAME</string>
+    <string name="courier_service">COURIER SERVICE</string>
+    <string name="tracking_id">TRACKING ID</string>
+    <string name="other_details">More info</string>
+    <string name="shipping_details">Shipping info</string>
+    <string name="cancel_confirmation">Are you sure?</string>
+    <string name="deliver_confirmation">Change order status?</string>
+    <string name="processing_confirmation">Change order status?</string>
+    <string name="claim_confirmation">Proceed to claim?</string>
+    <string name="no_address">Add shipping address</string>
+    <string name="mark_as_processing">Mark as processing</string>
+    <string name="cancel_your_order">Cancel your order</string>
+    <string name="mark_as_shipped">Mark as shipped</string>
+    <string name="edit_tracking">Edit tracking details</string>
+    <string name="mark_as_received">Mark as received</string>
+    <string name="mark_as_claimed">Mark as claimed</string>
+    <string name="order_id">ORDER ID</string>
+    <string name="chat_with_seller">Chat with seller</string>
+    <string name="chat_with_buyer">Chat with buyer</string>
+    <string name="buyer_name">BUYER NAME</string>
+    <string name="payment_type">PAYMENT TYPE</string>
+    <string name="order_date">ORDER DATE</string>
+    <string name="shipped_date">SHIPMENT DATE</string>
+    <string name="delivery_confirmed">DELIVERY CONFIRMED</string>
+    <string name="delivery_address">DELIVERY ADDRESS</string>
+    <string name="Price">Price</string>
+    <string name="fullnameishort">Enter at least 3 characters</string>
+    <string name="addrsisshort">Enter your correct state</string>
+    <string name="cityisshort">Enter your correct city</string>
+    <string name="stateisshort">State is too short (Minimum is 2 characters)</string>
+    <string name="order_on">ORDER ON</string>
+    <string name="enter_code">Enter country code &amp; contact NO</string>
+    <string name="verify">Verify</string>
+    <string name="country_code">Country code</string>
+    <string name="enter_mobile">Enter mobile number</string>
+    <string name="invite_messenger">Invite via Messenger</string>
+    <string name="invite_whatsapp">Invite via Whatsapp</string>
+    <string name="invite_email">Invite via Email</string>
+    <string name="invite_des">Lystiq is best with friends. Invite them!</string>
+    <string name="invite_friends">Invite friends</string>
+    <string name="allow_calls">Allow calls?</string>
+    <string name="allow_users_call_you">Allow users to call you?</string>
+    <string name="enter_your_num">Enter your number</string>
+    <string name="enter_your_num_des">We need to send an OTP to your phone to verify your number.</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="enter_otp_des">Enter the OTP from given mobile number</string>
+    <string name="confirm">Confirm</string>
+    <string name="call">Call</string>
+    <string name="delete">Delete</string>
+    <string name="delete_comment">Delete comment?</string>
+    <string name="signup_des">Become a part of this trading community!</string>
+    <string name="signin_des">Explore the world of products near you!</string>
+    <string name="continue_with_email">Or continue with e-mail</string>
+    <string name="last24h">24h ago</string>
+    <string name="last7d">7 days ago</string>
+    <string name="last30d">30 days ago</string>
+    <string name="all">All products</string>
+    <string name="popular">Popular</string>
+    <string name="hightlow">High to low</string>
+    <string name="lowthigh">Low to high</string>
+    <string name="invite_subject">Checkout now!</string>
+    <string name="invite_content">Discover great stuff in your area and make money by selling your used stuff!</string>
+    <string name="live">Live</string>
+    <string name="ad">Ad</string>
+    <string name="follow">Follow</string>
+    <string name="unfollow">Unfollow</string>
+    <string name="accepted">Accepted</string>
+    <string name="declined">Declined</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+    <string name="sold">Sold</string>
+    <string name="about">About</string>
+    <string name="sent_offer_request_on">Send offer request on</string>
+    <string name="receive_offer_request_on">Received offer request on</string>
+    <string name="valid_upto">VALID TILL</string>
+    <string name="days">days</string>
+    <string name="urgent_tag_features">Urgent tag Features</string>
+    <string name="urgent_feature_list1">Viewable by all users on desktop and mobile</string>
+    <string name="urgent_feature_list2">Displayed the Urgent tag in home results</string>
+    <string name="urgent_feature_list3">Displayed the Urgent tag in search results</string>
+    <string name="urgent_feature_list4">Higher visibility on the website</string>
+    <string name="promote_tag_features">Promote tag Features</string>
+    <string name="promote_feature_list1">Get your listing on prime location</string>
+    <string name="promote_feature_list2">Green color tag assures reliability in advertising</string>
+    <string name="promote_feature_list3">Promoted ads get 3x more response</string>
+    <string name="promote_feature_list4">Boosts your visibility and sales.</string>
+    <string name="write_review">Review us</string>
+    <string name="review_des">Tell us how you felt, through review &amp; rating</string>
+    <string name="title">Title</string>
+    <string name="review">Reviews</string>
+    <string name="submit">Submit</string>
+    <string name="please_give_your_rating">Rate us</string>
+    <string name="rated_successfully">Rated successfully</string>
+    <string name="no_reviews">No reviews yet</string>
+    <string name="edit_review">Edit review</string>
+    <string name="photos">Photos</string>
+    <string name="loading">Loading</string>
+    <string name="url_invalid">URL is invalid</string>
+    <string name="on">on</string>
+    <string name="payment_cancelled">Payment cancelled</string>
+
+
+    // Push notification or notification
+    <string name="start_following_you">follows you.</string>
+    <string name="sent_message">sent you a message</string>
+    <string name="added_a_product">posted an ad</string>
+    <string name="liked_your_product">liked your product</string>
+    <string name="comment_on_your_product">commented on</string>
+    <string name="sent_offer_request">sent you a request</string>
+    <string name="on_your_product">on your product</string>
+    <string name="sent_exchange_request_to_your_product">sent you an exchange request</string>
+    <string name="accepted_your_exchange_request_on">exchange request approved on</string>
+    <string name="declined_your_exchange_request_on">denied your exchange request on</string>
+    <string name="canceled_your_exchange_request_on">canceled your request on</string>
+    <string name="successed_your_exchange_request_on">accepted your request on</string>
+    <string name="failed_your_exchange_request_on">denied your exchange request on</string>
+    <string name="contacted_you_on_your_product">reached you for your product</string>
+    <string name="placed_an_order_in_your_shop">order placed on ID :</string>
+    <string name="your_order_has_been_cancelled">order cancelled and your Order Id is :</string>
+    <string name="added_tracking_details_for_your_order">updated your order as processing. ID:</string>
+    <string name="has_marked_your_order_as_delivered">has marked your order as delivered. ID:</string>
+    <string name="paid_the_amount_for_your_order">amount paid for the order. ID:</string>
+    <string name="refunded_the_amount_for_your_order">amount refunded for the order. ID:</string>
+    <string name="you_have_promoted_your_product">product promoted successfully</string>
+    <string name="by">by</string>
+    <string name="your_order_has_been_shipped">order shipped. Track your order at :</string>
+    <string name="your_order_has_been_processing">order is in process and your order ID is :</string>
+    <string name="your_order_has_been_delivered">order delivered and your order ID is :</string>
+
+
+    //Api responses
+    <string name="message_send_successfully">Message sent</string>
+    <string name="reported_successfully">Reported</string>
+    <string name="unreported_successfully">Unreported</string>
+    <string name="product_deleted_duccessfully">Deleted</string>
+    <string name="item_status_changed_to_sold">Status changed as sold</string>
+    <string name="item_status_changed_to_available">Status updated as available</string>
+    <string name="product_has_been_soldout_unexpectedly">Out of stock</string>
+    <string name="exchange_created_successfully">Exchange ad posted</string>
+    <string name="status_changed_to_processing">Processing</string>
+    <string name="tracking_details_updated">Tracking info updated</string>
+    <string name="status_changed_to_delivered">Status updated</string>
+    <string name="status_changed_to_cancelled">Status updated</string>
+    <string name="status_changed_to_claimed">Status updated</string>
+    <string name="your_promotion_was_activated_successfully">Ad promoted</string>
+    <string name="ordered_successfully">Ordered successfully</string>
+    <string name="please_activate_your_account">Check your inbox to verify and activate your account.</string>
+    <string name="your_account_blocked_by_admin">Your account has been suspended</string>
+    <string name="please_enter_correct_email_and_password">Please enter valid email and password</string>
+    <string name="user_not_registered_yet">Sign up to continue</string>
+    <string name="signup_true_response">Check your inbox to verify and activate your account.</string>
+    <string name="unable_to_create_user">Unable to create an account. Try after sometime.</string>
+    <string name="email_already_exists">Email already exists</string>
+    <string name="username_already_exists">Username is taken</string>
+    <string name="account_not_found">Profile does not exists</string>
+    <string name="old_password_and_new_password_are_same">Do not reuse your existing password!</string>
+    <string name="password_changed_successfully">Password Changed Successfully</string>
+    <string name="old_password_incorrect">Old Password Incorrect</string>
+    <string name="reset_password_link_mailed">We have sent a password reset link to you</string>
+    <string name="user_not_verified_activate_account">User not verified yet, activate the account from the email</string>
+    <string name="product_waiting_for_admin_approval">Listing posted. Waiting for approval.</string>
+    <string name="please_enter_correct_verification_code">Please enter correct verification code</string>
+    <string name="your_account_already_configured_with_this_mobile_number">Your account is already configured with this mobile number</string>
+    <string name="your_mobile_number_verified_successfully">Your mobile number verified successfully</string>
+    <string name="your_country_code_mobile_number_invalid">Your country code or mobile number is invalid</string>
+    <string name="within">Within</string>
+    <string name="miles">miles</string>
+    <string name="kilometers">kilometers</string>
+    <string name="pick_image_intent_text">Choose an image</string>
+    <string name="clear_hitsory">Clear history</string>
+
+
+    <string name="Facebook">FACEBOOK</string>
+    <string name="facebook">Login via Facebook</string>
+    <string name="twitter">Login via Twitter</string>
+    <string name="googleplus">Login via Google +</string>
+
+
+    <string name="time_ago_prefix" translatable="false"></string>
+    <string name="time_ago_suffix">ago</string>
+    <string name="time_ago_seconds">Just now</string>
+    <string name="time_ago_minute">1 minute</string>
+    <string name="time_ago_minutes">%d minutes</string>
+    <string name="time_ago_hour">1 hour</string>
+    <string name="time_ago_hours">%d hours</string>
+    <string name="time_ago_day">1 day</string>
+    <string name="time_ago_days">%d days</string>
+    <string name="time_ago_month">1 month</string>
+    <string name="time_ago_months">%d months</string>
+    <string name="time_ago_year">1 year</string>
+    <string name="time_ago_years">%d years</string>
+
+    <string name="please_enter_name">Enter your name</string>
+    <string name="item_sold_message_other">Out of stock. Search for other vendors.</string>
+    <string name="block_exchange">This product cannot be exchanged</string>
+    <string name="error_msg_to_imgcount">Only %1$d images are allowed to add</string>
+    <string name="sell_product">Snap and sell</string>
+    <string name="please_fill_title">Name your ad</string>
+    <string name="please_fill_review">Share your experience</string>
+    <string name="directsignup_true_response">Hello! Surf over a wide range of products near you only on Lystiq</string>
+    <string name="enter_your_nickname">Enter your username</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_address1">Shipping address</string>
+    <string name="enter_your_address2">Alternate address</string>
+    <string name="enter_your_city">Enter your city</string>
+    <string name="enter_your_state">Enter your state</string>
+    <string name="enter_your_zipcode">Enter your zipcode</string>
+    <string name="enter_your_phone">Enter your phone</string>
+    <string name="sorry_media_file_doesnt_exit">Sorry, this media file doesn\'t exist on your internal storage</string>
+    <string name="map_required_message">This app requires location access.</string>
+    <string name="share">Share</string>
+    <string name="fb_verified_success">Your Facebook account has been verified successfully</string>
+    <string name="shared_image">Sent an image</string>
+    <string name="shared_location">Sent you their location</string>
+    <string name="safety_tips">Safety tips</string>
+    <string name="block_user">Block user</string>
+    <string name="block">Block</string>
+    <string name="reallyBlock">Blocking holds all future offers &amp; messages from a user</string>
+    <string name="block_user_msg">You\'ve blocked</string>
+    <string name="unblock_user">Unblock user</string>
+    <string name="block_user_msg_receiver">Your conversation now blocked</string>
+    <string name="giving_away">Giving Away</string>
+    <string name="later">Later</string>
+    <string name="offer_decline_msg">Offer declined</string>
+    <string name="offer_accept_msg">Offer accepted</string>
+    <string name="offer_block_msg">Can\'t able to send offer request since the user has been blocked</string>
+    <string name="you_blocked_this_seller">You blocked this seller</string>
+    <string name="seller_blocked_by_you">Seller is blocked by you</string>
+
+    <string name="product_already_sold">Out of stock</string>
+    <string name="product_disabled_message">Product has been disabled</string>
+    <string name="conversation_blocked">This conversation has been blocked</string>
+    <string name="you_accept_msg">You have accepted this offer</string>
+    <string name="you_declined_msg">You have declined this offer</string>
+    <string name="product_removed_msg">Product is removed</string>
+
+    <string name="discard">Discard</string>
+    <string name="discard_post">Do you want to discard this post?</string>
+    <string name="discard_changes">Do you want to discard the Changes?</string>
+    <string name="exchange_exists">Request already exists. Please verify.</string>
+    <string name="choose_a_location">Choose a location</string>
+    <string name="world_wide_not_allowed">World Wide Not Allowed</string>
+    <string name="request_exchange">Request Exchange</string>
+
+    <string name="select_location">Select Location</string>
+</resources>
