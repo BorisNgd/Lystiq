@@ -133,7 +133,8 @@ public class PromoteUrgent extends Fragment implements View.OnClickListener {
         if (!CreatePromote.urgent.equals("")) {
            // String price = CreatePromote.currencySymbol + "  " + String.format("%.2f", Float.parseFloat(CreatePromote.urgent));
 
-            String price= String.format("%.2f", Float.parseFloat(CreatePromote.urgent)+" "+CreatePromote.currencySymbol);
+//            String price= String.format("%.2f", Float.parseFloat(CreatePromote.urgent)+" "+CreatePromote.currencySymbol);
+            String price= String.format("%.2f"+" "+CreatePromote.currencySymbol,Float.parseFloat(CreatePromote.urgent));
 
             adText.setText(Html.fromHtml(getString(R.string.urgent_des) + " <font color='" + String.format("#%06X", (0xFFFFFF & getResources().getColor(R.color.colorPrimary))) + "'>" + price + "</font>"));
         }

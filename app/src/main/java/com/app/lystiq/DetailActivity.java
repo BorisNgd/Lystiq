@@ -255,7 +255,7 @@ public class DetailActivity extends Activity implements OnClickListener, OnScrol
                     itemPrice.setText(itemMap.get(Constants.TAG_PRICE)+" "+curren);
                 }
             } else {
-                itemPrice.setText(itemMap.get(Constants.TAG_PRICE) + itemMap.get(Constants.TAG_CURRENCY_CODE));
+                itemPrice.setText(itemMap.get(Constants.TAG_PRICE) + " "+itemMap.get(Constants.TAG_CURRENCY_CODE));
             }
         }
         if (itemMap.get(Constants.TAG_ITEM_CONDITION).equals("") || itemMap.get(Constants.TAG_ITEM_CONDITION).equals("0")) {

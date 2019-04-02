@@ -116,6 +116,7 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
     ArrayList<String> uploadedImage = new ArrayList<String>();
     private ArrayList<String> currencyID = new ArrayList<String>();
     private ArrayList<String> currencyspin = new ArrayList<String>();
+    private ArrayList<String> currencyspin_api = new ArrayList<String>();
     private ArrayList<String> countryId = new ArrayList<String>();
     private ArrayList<String> countryName = new ArrayList<String>();
     private ArrayList<String> countryCode = new ArrayList<String>();
@@ -1095,7 +1096,9 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
 //                            currencyspin.add(jcur.getString(Constants.SYMBOL));
                             String[] cur_sym = jcur.getString(Constants.SYMBOL).split("-");
                             String cur_symbol = cur_sym[1];
+                            String cur_symbol_api = cur_sym[1]+"-"+cur_sym[0];
                             currencyspin.add(cur_symbol);
+                            currencyspin_api.add(cur_symbol_api);
                         }
 
                         JSONArray productCondition = res.getJSONArray("product_condition");
@@ -1142,11 +1145,12 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
                                 ((TextView) parent.getChildAt(0)).setTextColor(getResources().getColor(R.color.colorPrimary));
 
                                 String selectedCurrency = currencyspin.get(position);
+                                String selectedCurrency_api = currencyspin_api.get(position);
                                 if (selectedCurrency.contains("-")) {
                                     String cur[] = selectedCurrency.split("-");
                                     currencyid = cur[1] + "-" + cur[0];
                                 } else {
-                                    currencyid = "";
+                                    currencyid = selectedCurrency_api;
                                 }
                                 Log.v("currencyid", "" + currencyid);
                             } catch (NullPointerException e) {

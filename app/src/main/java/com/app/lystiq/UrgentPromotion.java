@@ -159,6 +159,7 @@ public class UrgentPromotion extends Fragment {
                 map.put(Constants.SOAP_PASSWORD, Constants.SOAP_PASSWORD_VALUE);
                 map.put(Constants.TAG_USERID, GetSet.getUserId());
                 map.put(Constants.TAG_TYPE, "urgent");
+                Log.v(TAG,"mypromo_passing_param="+map);
                 return map;
             }
         };
