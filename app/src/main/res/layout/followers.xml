@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ImageView
             android:layout_width="80dp"

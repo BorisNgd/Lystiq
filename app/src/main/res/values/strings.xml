@@ -237,7 +237,7 @@
     <string name="offer_should_not_above">Offer price should be less than the listing price</string>
     <string name="offer_should_not_zero">Enter a valid offer price</string>
     <string name="noFollowing">You’re not following anyone</string>
-    <string name="noFollowers">No followers</string>
+    <!--<string name="noFollowers">No followers</string>-->
     <string name="ads_des">Promote your best products so they appear in the most relevant places. Set up targeting ads so the right people see your ad.</string>
     <string name="listing">Listings</string>
     <string name="need_permission_to_access">Ask for permission!</string>

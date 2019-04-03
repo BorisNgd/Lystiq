@@ -432,7 +432,7 @@ Votre numéro de téléphone portable vérifié avec succès</string>
 <string name="twitter">Connectez-vous via Twitter</string>
 <string name="googleplus">Connectez-vous via Google +</string>
 <string name="time_ago_prefix"></string>
-<string name="time_ago_suffix">Il ya</string>
+<string name="time_ago_suffix">il y a</string>
 <string name="time_ago_seconds">Juste maintenant</string>
 <string name="time_ago_minute">1 minute</string>
 <string name="time_ago_minutes">%d minutes</string>
@@ -473,7 +473,7 @@ Votre numéro de téléphone portable vérifié avec succès</string>
 <string name="block_user_msg">Vous avez bloqué</string>
 <string name="unblock_user">Débloquer l\'utilisateur</string>
 <string name="block_user_msg_receiver">Votre conversation est maintenant bloquée</string>
-<string name="giving_away">Le don</string>
+<string name="giving_away">Le Don</string>
 <string name="later">Plus tard</string>
 <string name="offer_decline_msg">Offre refusée</string>
 <string name="offer_accept_msg">Offre acceptée</string>
