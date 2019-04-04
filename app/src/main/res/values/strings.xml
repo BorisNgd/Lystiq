@@ -539,4 +539,10 @@
 
     <string name="select_location">Select Location</string>
     <string name="enter_location">Enter Location</string>
+
+    <string name="poor_major_damaages">Poor (major damages)</string>
+    <string name="fair_sign_wear">Fair (signs of wear)</string>
+    <string name="good_sign_wear">Good (few signs of wear)</string>
+    <string name="like_new_wear">Like New (no signs of wear)</string>
+    <string name="brand_new_never">Brand New (never used)</string>
 </resources>

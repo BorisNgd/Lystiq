@@ -494,4 +494,10 @@ Votre numéro de téléphone portable vérifié avec succès</string>
 <string name="request_exchange">Demande d\'échange</string>
 
     <string name="select_location">Sélectionnez l\'emplacement</string>
+
+    <string name="poor_major_damaages">Pauvre (détérioré)</string>
+    <string name="fair_sign_wear">Juste (signes d\'usure)</string>
+    <string name="good_sign_wear">Bon (quelques signes d\'usure)</string>
+    <string name="like_new_wear">Comme neuf (aucun signe d\'usure)</string>
+    <string name="brand_new_never">Tout Neuf (jamais utilisé)</string>
     </resources>

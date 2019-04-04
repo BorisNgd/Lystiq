@@ -261,7 +261,22 @@ public class DetailActivity extends Activity implements OnClickListener, OnScrol
         if (itemMap.get(Constants.TAG_ITEM_CONDITION).equals("") || itemMap.get(Constants.TAG_ITEM_CONDITION).equals("0")) {
             itemCond.setVisibility(View.GONE);
         } else {
-            itemCond.setText(itemMap.get(Constants.TAG_ITEM_CONDITION));
+            String condition_str="";
+//            itemCond.setText(itemMap.get(Constants.TAG_ITEM_CONDITION));
+            if(itemMap.get(Constants.TAG_ITEM_CONDITION).equalsIgnoreCase("Poor (major damages)")){
+                condition_str = getString(R.string.poor_major_damaages);
+            }else if(itemMap.get(Constants.TAG_ITEM_CONDITION).equalsIgnoreCase("Fair (signs of wear)")){
+                condition_str = getString(R.string.fair_sign_wear);
+            }else if(itemMap.get(Constants.TAG_ITEM_CONDITION).equalsIgnoreCase("Good (few signs of wear)")){
+                condition_str = getString(R.string.good_sign_wear);
+            }else if(itemMap.get(Constants.TAG_ITEM_CONDITION).equalsIgnoreCase("Like New (no signs of wear)")){
+                condition_str = getString(R.string.like_new_wear);
+            }else if(itemMap.get(Constants.TAG_ITEM_CONDITION).equalsIgnoreCase("Brand New (never used)")){
+                condition_str = getString(R.string.brand_new_never);
+            }else{
+                condition_str = itemMap.get(Constants.TAG_ITEM_CONDITION);
+            }
+            itemCond.setText(condition_str);
         }
         Spannable spannedText = (Spannable) Html.fromHtml(itemMap.get(Constants.TAG_ITEM_DES), null, new MyTagHandler());
         likeCount.setText(itemMap.get(Constants.TAG_LIKECOUNT) + " " + getResources().getString(R.string.likes));
