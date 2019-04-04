@@ -1,11 +1,18 @@
 package com.app.external;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.util.Log;
 
+import com.app.lystiq.Language;
 import com.app.lystiq.R;
+import com.app.utils.Constants;
 
+import java.util.Arrays;
 import java.util.Date;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by hitasoft on 9/1/17.
@@ -13,6 +20,12 @@ import java.util.Date;
 
 public class TimeAgo {
     protected Context context;
+
+    String[] languages, langCode;
+    String languageCode,selectedLang,TAG = "TimeAgo";
+
+    public static SharedPreferences pref;
+    public static SharedPreferences.Editor editor;
 
     public TimeAgo(Context context) {
         this.context = context;
@@ -23,6 +36,18 @@ public class TimeAgo {
     }
 
     public String timeAgo(long millis) {
+
+        pref = context.getSharedPreferences("JoysalePref", MODE_PRIVATE);
+        editor = pref.edit();
+
+        languages = context.getResources().getStringArray(R.array.languages);
+        langCode = context.getResources().getStringArray(R.array.languageCode);
+        selectedLang= pref.getString(Constants.PREF_LANGUAGE, Constants.LANGUAGE);
+
+        int index = Arrays.asList(languages).indexOf(selectedLang);
+        languageCode = Arrays.asList(langCode).get(index);
+        Log.v(TAG, "languageCode=" + languageCode);
+
         long diff = new Date().getTime() - millis;
         Resources r = context.getResources();
         String prefix = r.getString(R.string.time_ago_prefix);
@@ -61,10 +86,18 @@ public class TimeAgo {
         if (prefix != null && prefix.length() > 0) {
             sb.append(prefix).append(" ");
         }
-        sb.append(words);
-        if (suffix != null && suffix.length() > 0 && !words.equals(r.getString(R.string.time_ago_seconds))) {
-            sb.append(" ").append(suffix);
+        if(languageCode.equalsIgnoreCase("fr")){
+            if (suffix != null && suffix.length() > 0 && !words.equals(r.getString(R.string.time_ago_seconds))) {
+                sb.append(suffix);
+            }
+            sb.append(" ").append(words);
+        }else{
+            sb.append(words);
+            if (suffix != null && suffix.length() > 0 && !words.equals(r.getString(R.string.time_ago_seconds))) {
+                sb.append(" ").append(suffix);
+            }
         }
+
         return sb.toString().trim();
     }
 }

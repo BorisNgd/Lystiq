@@ -298,7 +298,7 @@ photo</string>
     <string name="invite_des">Lystiq est mieux avec des amis. Invite-les!</string>
     <string name="invite_friends">Inviter des amis</string>
     <string name="allow_calls">Autoriser les appels?</string>
-    <string name="allow_users_call_you">Autoriser les utilisateurs de vous appeler?</string>
+    <string name="allow_users_call_you">Autoriser les appels appeler?</string>
     <string name="enter_your_num">Entrez votre numéro</string>
     <string name="enter_your_num_des">Nous devons envoyer un mot de passe à votre téléphone pour vérifier votre numéro.</string>
     <string name="enter_otp">Entrez mot de pass</string>
@@ -439,7 +439,7 @@ Votre numéro de téléphone portable vérifié avec succès</string>
 <string name="time_ago_hour">1 heures</string>
 <string name="time_ago_hours">%d heures</string>
 <string name="time_ago_day">1 jour</string>
-<string name="time_ago_days">%d journées</string>
+<string name="time_ago_days">%d jours</string>
 <string name="time_ago_month">1 mois</string>
 <string name="time_ago_months">%d mois</string>
 <string name="time_ago_year">1 an</string>

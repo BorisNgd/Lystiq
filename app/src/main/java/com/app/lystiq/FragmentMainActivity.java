@@ -709,9 +709,14 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
             if(!(autolocationListAry.size()>0)){
                 if(locationAry.size()>0){
                     for (int i = 0; i < locationAry.size(); i++) {
+                        String location = "";
                         HashMap<String, String> temp = locationAry.get(i);
                         String location_id = temp.get(Constants.TAG_LOCATION_ID);
-                        String location = temp.get(Constants.TAG_LOCATION_REGION)+", "+temp.get(Constants.TAG_LOCATION_CITY)+", "+temp.get(Constants.TAG_LOCATION_COUNTRY);
+                        if(temp.get(Constants.TAG_LOCATION_REGION) != null && !temp.get(Constants.TAG_LOCATION_REGION).equals("")){
+                            location = temp.get(Constants.TAG_LOCATION_REGION)+", "+temp.get(Constants.TAG_LOCATION_CITY)+", "+temp.get(Constants.TAG_LOCATION_COUNTRY);
+                        }else{
+                            location = temp.get(Constants.TAG_LOCATION_CITY)+", "+temp.get(Constants.TAG_LOCATION_COUNTRY);
+                        }
                         autolocationListAry.add(location);
                         locationListIDAry.add(location_id);
                     }
@@ -724,10 +729,16 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
         }else{
             if(!(autolocationListAry.size()>0)){
                 if(locationAry.size()>0){
+                    String location = "";
                     for (int i = 0; i < locationAry.size(); i++) {
                         HashMap<String, String> temp = locationAry.get(i);
                         String location_id = temp.get(Constants.TAG_LOCATION_ID);
-                        String location = temp.get(Constants.TAG_LOCATION_REGION)+", "+temp.get(Constants.TAG_LOCATION_CITY)+", "+temp.get(Constants.TAG_LOCATION_COUNTRY);
+                        if(temp.get(Constants.TAG_LOCATION_REGION) != null && !temp.get(Constants.TAG_LOCATION_REGION).equals("")){
+                            location = temp.get(Constants.TAG_LOCATION_REGION)+", "+temp.get(Constants.TAG_LOCATION_CITY)+", "+temp.get(Constants.TAG_LOCATION_COUNTRY);
+                        }else{
+                            location = temp.get(Constants.TAG_LOCATION_CITY)+", "+temp.get(Constants.TAG_LOCATION_COUNTRY);
+                        }
+//                        String location = temp.get(Constants.TAG_LOCATION_REGION)+", "+temp.get(Constants.TAG_LOCATION_CITY)+", "+temp.get(Constants.TAG_LOCATION_COUNTRY);
                         autolocationListAry.add(location);
                     }
                 }
@@ -761,9 +772,15 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
         if(cond != null && !cond.equalsIgnoreCase("refresh")){
             if(locationAry.size()>0){
                 for (int i = 0; i < locationAry.size(); i++) {
+                    String location ="";
                     HashMap<String, String> temp = locationAry.get(i);
                     String location_id = temp.get(Constants.TAG_LOCATION_ID);
-                    String location = temp.get(Constants.TAG_LOCATION_REGION)+", "+temp.get(Constants.TAG_LOCATION_CITY)+", "+temp.get(Constants.TAG_LOCATION_COUNTRY);
+                    if(temp.get(Constants.TAG_LOCATION_REGION) != null && !temp.get(Constants.TAG_LOCATION_REGION).equals("")){
+                        location = temp.get(Constants.TAG_LOCATION_REGION)+", "+temp.get(Constants.TAG_LOCATION_CITY)+", "+temp.get(Constants.TAG_LOCATION_COUNTRY);
+                    }else{
+                        location = temp.get(Constants.TAG_LOCATION_CITY)+", "+temp.get(Constants.TAG_LOCATION_COUNTRY);
+                    }
+//                    String location = temp.get(Constants.TAG_LOCATION_REGION)+", "+temp.get(Constants.TAG_LOCATION_CITY)+", "+temp.get(Constants.TAG_LOCATION_COUNTRY);
                     locationListAry.add(location);
                     locationListIDAry.add(location_id);
                 }

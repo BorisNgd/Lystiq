@@ -65,6 +65,7 @@ public class Language extends AppCompatActivity implements View.OnClickListener 
     String[] languages, langCode;
     String selectedLang = Constants.LANGUAGE;
     LanguageAdapter languageAdapter;
+    public static String langCodeGlobal = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -392,6 +393,7 @@ public class Language extends AppCompatActivity implements View.OnClickListener 
                         Constants.editor.commit();
 
                         addDeviceId();
+                        langCodeGlobal = langCode[position];
                         setLocale(langCode[position]);
                     }
                 });
