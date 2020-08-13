@@ -50,6 +50,7 @@ import com.app.helper.NetworkReceiver;
 import com.app.helper.OnButtonClick;
 import com.app.utils.Constants;
 import com.app.utils.GetSet;
+import com.facebook.appevents.AppEventsLogger;
 
 import org.acra.ACRA;
 import org.acra.annotation.ReportsCrashes;
@@ -192,6 +193,7 @@ public class JoysaleApplication extends Application {
         filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         // init facebook //
         FacebookSdk.sdkInitialize(this.getApplicationContext());
+        AppEventsLogger.activateApp(this);
         FacebookSdk.setApplicationId(Constants.App_ID);
 
 

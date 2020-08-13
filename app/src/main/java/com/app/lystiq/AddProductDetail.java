@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -57,6 +58,13 @@ import com.app.utils.AppUtils;
 import com.app.utils.Constants;
 import com.app.utils.DefensiveClass;
 import com.app.utils.GetSet;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.share.Sharer;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.DeviceShareDialog;
+import com.facebook.share.widget.ShareDialog;
 import com.squareup.picasso.Picasso;
 import com.wang.avi.AVLoadingIndicatorView;
 
@@ -87,12 +95,12 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
 
     // Widget Declaration
     public static LinearLayout bottomLay, instantLay, buynowLay;
-    public static RelativeLayout exchangeLay, offerLay, conditionLay;
+    public static RelativeLayout exchangeLay, offerLay, conditionLay,facebookLay;
     public static TextView itemCondition, location, category;
     public static ImageView condArrow, locArrow, catArrow;
-    public static SwitchCompat chatSwitch, exchangeSwitch, buySwitch, givingAwaySwitch;
+    public static SwitchCompat chatSwitch, exchangeSwitch, buySwitch, givingAwaySwitch,facebookSwitch;
     ImageView backBtn, cancelIcon;
-    TextView title, cancel, post, promote, alert_title, uploadStatus, successText;
+    TextView title, cancel, post, share ,promote, alert_title, uploadStatus, successText;
     EditText productName, productDes, price, paypalId, shippingFee;
     Spinner currency;
     ProgressBar loadingProgress;
@@ -100,11 +108,14 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
     LinearLayout parentLay, saveLay, priceLay;
     RelativeLayout uploadSuccessLay, imageLoadingLay, locationLay, categoryLay, buyLay, givingLay;
     AVLoadingIndicatorView loadingView, postProgress;
+    CallbackManager mCallbackManager;
+    ShareDialog shareDialog;
 
     public static AddProductDetail activity;
     public ImagesAdapter imagesAdapter;
     ArrayAdapter currencyadapter;
     Dialog dialog;
+
 
     public ArrayList<HashMap<String, Object>> images = new ArrayList<HashMap<String, Object>>();
     static ArrayList<String> removeAry = new ArrayList<String>();
@@ -133,6 +144,33 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
     private static int prevPosition;
     String emailPattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
+    private FacebookCallback<Sharer.Result> shareCallback =
+            new FacebookCallback<Sharer.Result>() {
+                @Override
+                public void onCancel() {
+                    Log.d("HelloFacebook", "Canceled");
+                    loadingView.setVisibility(View.GONE);
+                    dialog.show();
+                }
+
+                @Override
+                public void onError(FacebookException error) {
+                    Log.d("HelloFacebook", String.format("Error: %s", error.toString()));
+                    loadingView.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onSuccess(Sharer.Result result) {
+                    Log.d("HelloFacebook", "Success!");
+                    //Toast.makeText(AddProductDetail.this, "Product published on facebook", Toast.LENGTH_SHORT).show();
+                    loadingView.setVisibility(View.GONE);
+                    dialog.show();
+                    if (result.getPostId() != null) {
+                        String id = result.getPostId();
+                    }
+                }
+            };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -151,6 +189,8 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
         currency = (Spinner) findViewById(R.id.currency);
         chatSwitch = (SwitchCompat) findViewById(R.id.chatSwitch);
         exchangeSwitch = (SwitchCompat) findViewById(R.id.exchangeSwitch);
+        facebookSwitch = (SwitchCompat) findViewById(R.id.facebookSwitch);
+        //twitterSwitch = (SwitchCompat) findViewById(R.id.twitterSwitch);
         imageList = (HorizontalListView) findViewById(R.id.imageList);
         parentLay = (LinearLayout) findViewById(R.id.parentLay);
         saveLay = (LinearLayout) findViewById(R.id.saveLay);
@@ -176,6 +216,10 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
         priceLay = (LinearLayout) findViewById(R.id.priceLay);
         buyLay = (RelativeLayout) findViewById(R.id.buyLay);
         givingLay = (RelativeLayout) findViewById(R.id.givingLay);
+        facebookLay = (RelativeLayout)findViewById(R.id.facebookLay);
+
+        mCallbackManager = CallbackManager.Factory.create();
+        shareDialog = new ShareDialog(this);
 
         title.setText(getString(R.string.add_your_stuff));
         from = getIntent().getExtras().getString("from");
@@ -224,6 +268,7 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
         conditionLay.setOnClickListener(this);
         locationLay.setOnClickListener(this);
         categoryLay.setOnClickListener(this);
+
         //productName.addTextChangedListener(new addListenerOnTextChange(this, productName));
         productDes.addTextChangedListener(new addListenerForDes(this, productDes));
         price.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
@@ -310,6 +355,7 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
         dialog.setCanceledOnTouchOutside(false);
         dialog.setCancelable(false);
         promote = (TextView) dialog.findViewById(R.id.promote);
+       // share = (TextView) dialog.findViewById(R.id.share);
         alert_title = (TextView) dialog.findViewById(R.id.alert_title);
         uploadStatus = (TextView) dialog.findViewById(R.id.uploadStatus);
         cancelIcon = (ImageView) dialog.findViewById(R.id.cancelIcon);
@@ -319,8 +365,10 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
         imageLoadingLay = (RelativeLayout) dialog.findViewById(R.id.imageLoadingLay);
         successText = (TextView) dialog.findViewById(R.id.success_txt);
 
+
         //Dialog elements listener
         promote.setOnClickListener(this);
+       // share.setOnClickListener(this);
         cancelIcon.setOnClickListener(this);
 
 
@@ -511,6 +559,7 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
                         bottomLay.setVisibility(View.GONE);
                         conditionLay.setVisibility(View.GONE);
                         exchangeLay.setVisibility(View.GONE);
+                        facebookLay.setVisibility(View.GONE);
                         offerLay.setVisibility(View.GONE);
                     } else {
                         bottomLay.setVisibility(View.VISIBLE);
@@ -616,7 +665,7 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
 //                    images.addAll(CameraActivity.images);
                     Log.d("imageFromEdit", images + " ");
 //                    CameraActivity.images.clear();
-                    if (images.size() < 5) {
+                    if (images.size() < 10) {
                         addPlusIcon();
                     }
                     if (imagesAdapter == null) {
@@ -652,7 +701,7 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
                     }
                 }
 
-                if (images.size() < 5) {
+                if (images.size() < 10) {
                     addPlusIcon();
                 }
 
@@ -767,6 +816,7 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        mCallbackManager.onActivityResult(requestCode , resultCode , data);
         if (resultCode == Activity.RESULT_OK) {
 //            Log.i(TAG, "onActivityResult: " + requestCode + "," + resultCode);
             if (requestCode == ACTION_EDIT) {
@@ -781,6 +831,21 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
         }
     }
 
+    private void setListener(){
+        facebookSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+
+                    ShareLinkContent content = new ShareLinkContent.Builder()
+                            .setContentUrl(Uri.parse("https://www.lystiq.com/media/item/1441/191597094184.jpg")).build();
+                    if (ShareDialog.canShow(ShareLinkContent.class)){
+                        shareDialog.show(content);
+                    }
+                }
+            }
+        });
+    }
 
     public void addProduct(final String name, final String des) {
         StringRequest req = new StringRequest(Request.Method.POST, Constants.API_POST_PRODUCT, new Response.Listener<String>() {
@@ -797,8 +862,29 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
                         if (DefensiveClass.optString(jonj, Constants.TAG_MESSAGE).equalsIgnoreCase("Product waiting for admin approval")) {
                             successText.setText(getString(R.string.product_waiting_for_admin_approval));
                         } else {
-                            successText.setText(getString(R.string.successfully_posted));
+                            //successText.setText(getString(R.string.successfully_posted));
                             SearchAdvance.applyFilter = true;
+
+                            if (facebookLay.getVisibility() == View.VISIBLE) {
+                                if (facebookSwitch.isChecked()) {
+                                   // successText.setText(getString(R.string.successfully_posted));
+                                    String appUrl = "https://www.lystiq.com/?id="+posteditemId;
+                                    shareDialog.registerCallback(mCallbackManager , shareCallback);
+                                    ShareLinkContent content = new ShareLinkContent.Builder()
+                                            .setContentUrl(Uri.parse(appUrl)).build();
+                                    if (ShareDialog.canShow(ShareLinkContent.class)){
+                                        shareDialog.show(content);
+                                    }
+                                }
+                            }
+
+                           /* if (twitterLay.getVisibility() == View.VISIBLE) {
+                                if (twitterSwitch.isChecked()) {
+
+                                } else {
+
+                                }
+                            }**/
                         }
 //                        CameraActivity.images.clear();
                         images.clear();
@@ -863,6 +949,7 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
                 map.put(Constants.TAG_COUNTRYID, mcountryId);
                 map.put(Constants.TAG_SHIPPING_COST, shippingFee.getText().toString().trim());
                 map.put(Constants.TAG_LOCATION_ID1, selected_locID);
+              
                 if (exchangeLay.getVisibility() == View.VISIBLE) {
                     if (exchangeSwitch.isChecked()) {
                         map.put(Constants.TAG_EXCHANGE_TO_BUY, "1");
@@ -1283,7 +1370,8 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
                         }
                         count = pathsAry.size();
                         loadingProgress.setMax(count);
-                        dialog.show();
+                        //dialog.show();
+                        loadingView.setVisibility(View.VISIBLE);
                         String paths = pathsAry.toString().replaceAll("[\\[\\]]|(?<=,)\\s+", "");
                         if (paths.contains(",")) {
                             String path[] = paths.split(",");
@@ -1293,6 +1381,7 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
                             if (pathsAry.size() > 0) {
                                 new UploadImage().execute(paths);
                             } else {
+                                loadingView.setVisibility(View.VISIBLE);
                                 alert_title.setText(getString(R.string.posting_list));
                                 loadingProgress.setVisibility(View.GONE);
                                 postProgress.setVisibility(View.VISIBLE);
@@ -1329,18 +1418,31 @@ public class AddProductDetail extends AppCompatActivity implements View.OnClickL
                 /*catch (Exception e) {
                     e.printStackTrace();
                 }*/
-                break;
-            case R.id.promote:
+
+            /**case R.id.share:
                 if (!posteditemId.equals("")) {
-                    reset();
+
+                   // JoysaleApplication.dialog(AddProductDetail.this, "url", itemMap.get(Constants.TAG_PROURL));
+
+                  //  Toast.makeText(AddProductDetail.this, "partage ici:"+ posteditemId, Toast.LENGTH_SHORT).show();
+                   reset();
                     finish();
                     Intent u = new Intent(AddProductDetail.this, CreatePromote.class);
                     u.putExtra("itemId", posteditemId);
 
                     startActivity(u);
+                    String appUrl = "https://www.lystiq.com/?id="+posteditemId;
+                    Intent g = new Intent(Intent.ACTION_SEND);
+                    g.setType("text/plain");
+                    g.putExtra(Intent.EXTRA_TEXT, appUrl);
+                    startActivity(Intent.createChooser(g, "Share"));
+                    break;
+
+
                 } else {
+                    JoysaleApplication.dialog(AddProductDetail.this, "no", "non");
                     Toast.makeText(AddProductDetail.this, getString(R.string.somethingwrong), Toast.LENGTH_SHORT).show();
-                }
+                }**/
                 break;
             case R.id.conditionLay:
                 Intent i = new Intent(AddProductDetail.this, SubCategory.class);

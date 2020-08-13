@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\6460\\Documents\\usa\\lystiqv3.2\\parallaxScroll\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\6460\\Documents\\usa\\lystiqv3.2\\parallaxScroll\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "358,401,472,564,633,749,827,897,1005,1070",
+                        "endColumns": "42,70,91,68,115,77,69,107,64,111",
+                        "endOffsets": "396,467,559,628,744,822,892,1000,1065,1177"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\6460\\Documents\\usa\\lystiqv3.2\\parallaxScroll\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\6460\\Documents\\usa\\lystiqv3.2\\parallaxScroll\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "358,401,472,564,633,749,827,897,1005,1070",
+                        "endColumns": "42,70,91,68,115,77,69,107,64,111",
+                        "endOffsets": "396,467,559,628,744,822,892,1000,1065,1177"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -36,6 +36,8 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.flurry.android.FlurryAgent;
+import com.flurry.android.FlurryPerformance;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -61,7 +63,6 @@ import com.app.utils.GetSet;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
@@ -158,6 +159,13 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
                     PorterDuff.Mode.SRC_IN);
             dialog.setIndeterminateDrawable(drawable);
         }
+        new FlurryAgent.Builder()
+                .withDataSaleOptOut(false) //CCPA - the default value is false
+                .withCaptureUncaughtExceptions(true)
+                .withIncludeBackgroundSessionsInMetrics(true)
+                .withLogLevel(Log.VERBOSE)
+                .withPerformanceMetrics(FlurryPerformance.ALL)
+                .build(this, "2NPD46F39M37C4T37SCT");
 
     }
 

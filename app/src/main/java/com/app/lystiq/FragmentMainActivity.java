@@ -1946,7 +1946,7 @@ public class FragmentMainActivity extends AppCompatActivity implements OnClickLi
                     }
                     TimeAgo timeAgo = new TimeAgo(mContext);
 //                    holder.postedTime.setText(timeAgo.timeAgo(timestamp));
-                    holder.postedTime.setText(timeAgo.timeAgo(timestamp));
+                   // holder.postedTime.setText(timeAgo.timeAgo(timestamp));
                     Log.v("time", "time=" + timeAgo.timeAgo(timestamp));
                 } else if (viewHolder instanceof HeaderView) {
                     HeaderView holder = (HeaderView) viewHolder;

@@ -216,9 +216,9 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
                 name.setText(profileMap.get(Constants.TAG_FULL_NAME));
                 fullname = profileMap.get(Constants.TAG_FULL_NAME).toString();
                 email.setText(profileMap.get(Constants.TAG_EMAIL));
-                viewUrl = profileMap.get("user_img");
+               viewUrl = profileMap.get("user_img");
                 Picasso.with(EditProfile.this).load(viewUrl).placeholder(R.drawable.appicon).error(R.drawable.appicon).into(userImage);
-
+                //Picasso.with(EditProfile.this).load(viewUrl).placeholder(R.drawable.appicon);
                 if (profileMap.get("facebook_ver").equals("true")) {
                     fbverified.setText(getString(R.string.verified));
                     fbverifiedIcon.setImageResource(R.drawable.tick_green);

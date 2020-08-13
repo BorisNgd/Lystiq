@@ -26,6 +26,9 @@ Sélectionnez votre catégorie</string>
     <string name="location">Emplacement</string>
     <string name="exchangebuy">Echange Acheter</string>
     <string name="fixedprice">Prix fixe</string>
+    <string name="facebookshare">Partager sur Facebook</string>
+    <string name="twittershare">Partager sur Twitter</string>
+    <string name="postr">Vendre</string>
     <string name="post">Publier</string>
     <string name="cancel">Annuler</string>
     <string name="sorry">Désolé!</string>
@@ -115,6 +118,7 @@ photo</string>
     <string name="outgoing">Sortant</string>
     <string name="success">Succès</string>
     <string name="failed">Échoué</string>
+    <string name="shareit">Partager</string>
     <string name="myexchange">Mes Échanges</string>
     <string name="exchange_status_chngd">Statut d\'échange changé</string>
     <string name="gps_settings">Paramètres GPS</string>
@@ -126,6 +130,7 @@ photo</string>
     <string name="your_not_logged">Vous n\'êtes pas connecté</string>
     <string name="login">Connexion</string>
     <string name="sell_your_stuff">Vendez vos trucs</string>
+    <string name="sell_your_stuffr">Vendez vos trucs</string>
     <string name="chat">Bavardage</string>
     <string name="myprofile">Mon profil</string>
     <string name="help">Aide</string>

@@ -5,18 +5,18 @@ android {
         config {
             keyAlias 'lystiq'
             keyPassword 'lystiq'
-            storeFile file('/home/hitasoft/Documents/Joysale Installations/lystiqv3.2/lystiq/app/lystiq.jks')
+            storeFile file('C:\\Users\\User\\AndroidStudioProjects\\lystiqv3.2\\lystiqv3.2\\keystore\\lystiq.jks')
             storePassword 'lystiq'
         }
     }
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 28
+    buildToolsVersion '28.0.1'
     defaultConfig {
         applicationId "com.app.lystiq"
         minSdkVersion 17
-        targetSdkVersion 27
-        versionCode 4
-        versionName "3.2"
+        targetSdkVersion 28
+        versionCode 10
+        versionName '3.7'
         multiDexEnabled true
     }
     buildTypes {
@@ -42,6 +42,8 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    productFlavors {
     }
 }
 
@@ -83,5 +85,7 @@ dependencies {
     implementation('io.socket:socket.io-client:1.0.0') {
         exclude group: 'org.json', module: 'json'
     }
+    implementation 'com.flurry.android:analytics:12.1.0'
+    implementation 'com.flurry.android:ads:12.1.0'
 }
 apply plugin: 'com.google.gms.google-services'

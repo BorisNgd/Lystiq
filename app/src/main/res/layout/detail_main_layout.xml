@@ -161,7 +161,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
                     android:singleLine="true"
-                    android:text="12 hours ago"
+                    android:text=""
                     android:textSize="@dimen/text_small"
                     android:textColor="@color/white"
                     app:fonts="font_regular.ttf" />

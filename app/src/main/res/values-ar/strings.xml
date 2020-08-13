@@ -24,7 +24,10 @@
     <string name="location">موقعك</string>
     <string name="exchangebuy">تبادل لشراء</string>
     <string name="fixedprice">الأسعار ثابتة</string>
-    <string name="post">بريد</string>
+    <string name="facebookshare">انشر في الفيسبوك</string>
+    <string name="twittershare">حصة على التغريد</string>
+    <string name="postr">بريد</string>
+    <string name="post">يبيع</string>
     <string name="cancel">إلغاء</string>
     <string name="sorry">آسف!</string>
     <string name="posting_list">تحميل ..</string>
@@ -112,6 +115,7 @@
     <string name="outgoing">المنتهية</string>
     <string name="success">نجاح</string>
     <string name="failed">فشل</string>
+    <string name="shareit">شارك</string>
     <string name="myexchange">بلدي التبادل</string>
     <string name="exchange_status_chngd">تغيرت حالة الصرف</string>
     <string name="gps_settings">إعدادات GPS</string>
@@ -122,7 +126,8 @@
     <string name="keep">احتفظ</string>
     <string name="your_not_logged">سجل الدخول للمتابعة</string>
     <string name="login">تسجيل الدخول</string>
-    <string name="sell_your_stuff">انشر إعلانك</string>
+    <string name="sell_your_stuff">نشر إعلانك</string>
+    <string name="sell_your_stuffr">انشر إعلانك</string>
     <string name="chat">دردشة</string>
     <string name="myprofile">ملفي</string>
     <string name="help">مساعدة</string>

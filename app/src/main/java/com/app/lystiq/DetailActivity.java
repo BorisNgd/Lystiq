@@ -309,7 +309,7 @@ public class DetailActivity extends Activity implements OnClickListener, OnScrol
                 timestamp = Long.parseLong(time) * 1000;
             }
             TimeAgo timeAgo = new TimeAgo(DetailActivity.this);
-            postedTime.setText(timeAgo.timeAgo(timestamp));
+           // postedTime.setText(timeAgo.timeAgo(timestamp));
         } catch (NullPointerException e) {
             e.printStackTrace();
         } catch (NumberFormatException e) {
@@ -1223,7 +1223,7 @@ public class DetailActivity extends Activity implements OnClickListener, OnScrol
                     timestamp = Long.parseLong(time) * 1000;
                 }
                 TimeAgo timeAgo = new TimeAgo(mContext);
-                holder.postedTime.setText(timeAgo.timeAgo(timestamp));
+                //holder.postedTime.setText(timeAgo.timeAgo(timestamp));
 
             } catch (NullPointerException e) {
                 e.printStackTrace();

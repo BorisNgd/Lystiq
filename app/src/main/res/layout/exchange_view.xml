@@ -107,7 +107,7 @@
                 android:layout_below="@+id/userName"
                 android:layout_marginTop="3dp"
                 android:layout_toEndOf="@+id/userImage"
-                android:text="1 day ago"
+                android:text=""
                 android:textColor="@color/secondaryText"
                 app:fonts="font_regular.ttf" />
 

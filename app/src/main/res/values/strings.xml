@@ -18,6 +18,7 @@
 
     //Facebook Details
     <string name="FACEBOOK_APP_ID" translatable="false">650573488732916</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb650573488732916</string>
     <string name="ACCOUNT_KIT_CLIENT_TOKEN" translatable="false">594bc465a1851d65892ac8b649e28c47</string>
 
     <string-array name="languages">
@@ -62,7 +63,10 @@
     <string name="location">Location</string>
     <string name="exchangebuy">Exchange to Buy</string>
     <string name="fixedprice">Fixed Price</string>
+    <string name="facebookshare">Share on Facebook</string>
+    <string name="twittershare">Share on Twitter</string>
     <string name="post">Post</string>
+    <string name="postr">Sell</string>
     <string name="cancel">Cancel</string>
     <string name="sorry">Sorry!</string>
     <string name="posting_list">Uploading..</string>
@@ -150,6 +154,7 @@
     <string name="outgoing">Outgoing</string>
     <string name="success">Success</string>
     <string name="failed">Failed</string>
+    <string name="shareit">Share</string>
     <string name="myexchange">My Exchanges</string>
     <string name="exchange_status_chngd">Exchange status changed</string>
     <string name="gps_settings">GPS settings</string>
@@ -160,7 +165,8 @@
     <string name="keep">Keep</string>
     <string name="your_not_logged">Log in to proceed</string>
     <string name="login">Login</string>
-    <string name="sell_your_stuff">Post your ad</string>
+    <string name="sell_your_stuff">Sell your stuff</string>
+    <string name="sell_your_stuffr">Post your ad</string>
     <string name="chat">Chat</string>
     <string name="myprofile">My profile</string>
     <string name="help">Help</string>
@@ -216,7 +222,7 @@
     <string name="Sort_by">SORT BY</string>
     <string name="reset">Reset</string>
     <string name="apply">Apply</string>
-    <string name="startmaking">Make money online by selling or buying used stuff near you</string>
+    <string name="startmaking">A social commerce marketplace where people can buy and sell fashion items</string>
     <string name="search">Search</string>
     <string name="addcomment">Post comment</string>
     <string name="signup">Sign up</string>
