@@ -102,7 +102,6 @@ public class JoysaleApplication extends Application {
     /**
      * for avoiding emoji typing in keyboard
      **/
-
     public static InputFilter EMOJI_FILTER = new InputFilter() {
 
         @Override

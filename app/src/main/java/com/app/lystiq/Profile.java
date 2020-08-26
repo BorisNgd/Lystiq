@@ -18,6 +18,8 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatRatingBar;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Display;
@@ -27,9 +29,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -37,11 +41,13 @@ import android.widget.PopupWindow;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.app.external.CustomTextView;
 import com.app.utils.Constants;
 import com.app.utils.DefensiveClass;
 import com.app.utils.GetSet;
@@ -70,12 +76,12 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
     public static TextView userName, location, userName2, location2, ratingCount;
     CoordinatorLayout main;
     AppBarLayout appbar;
-    LinearLayout verificationLay, statusLay;
+    LinearLayout verificationLay, statusLay , ratingLay;
     RelativeLayout userLay, reviewLay;
     Display display;
     RatingBar ratingBar;
     Toolbar toolbar;
-    ImageView backbtn, settingbtn, optionbtn;
+    ImageView backbtn, settingbtn, optionbtn , ratingBtn;
     CollapsingToolbarLayout collapsingToolbar;
     TabPagerAdapter tabPagerAdapter;
     ViewPager mViewPager;
@@ -99,9 +105,11 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         backbtn = (ImageView) findViewById(R.id.backbtn);
         settingbtn = (ImageView) findViewById(R.id.settingbtn);
         optionbtn = (ImageView) findViewById(R.id.optionbtn);
+        ratingBtn = (ImageView)findViewById(R.id.ratings);
         userImg = (ImageView) findViewById(R.id.userImg);
         mHeaderLogo = (ImageView) findViewById(R.id.header_logo);
         userLay = (RelativeLayout) findViewById(R.id.userLay);
+        ratingLay = (LinearLayout) findViewById(R.id.ratingLay);
         userName = (TextView) findViewById(R.id.userName);
         location = (TextView) findViewById(R.id.location);
         userName2 = (TextView) findViewById(R.id.userName2);
@@ -155,6 +163,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         settingbtn.setOnClickListener(this);
         statusLay.setOnClickListener(this);
         ratingBar.setOnClickListener(this);
+        ratingBtn.setOnClickListener(this);
 
         profileMap.clear();
 
@@ -694,8 +703,10 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
                     return LikedItems.newInstance(position, userId);
                 } else if (position == 2) {
                     return Followers.newInstance(position, userId);
-                } else {
+                }else if (position == 3){
                     return Followings.newInstance(position, userId);
+                }else {
+                    return Reviews.newInstance(position , userId);
                 }
             //}
         }
@@ -753,6 +764,46 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
         JoysaleApplication.getInstance().addToRequestQueue(req);
     }
 
+    private void showRatingDialog() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); // before
+        dialog.setContentView(R.layout.rating_dialog_layout);
+        dialog.setCancelable(true);
+
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+
+        final EditText et_post = (EditText) dialog.findViewById(R.id.et_post);
+        final RatingBar rating_bar = (RatingBar) dialog.findViewById(R.id.rating_bar);
+
+        ((CustomTextView) dialog.findViewById(R.id.bt_cancel)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        ((CustomTextView) dialog.findViewById(R.id.bt_submit)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String review = et_post.getText().toString().trim();
+                if (review.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Please fill review text", Toast.LENGTH_SHORT).show();
+                } else {
+                    //Todo handle rating
+                }
+
+                dialog.dismiss();
+                Toast.makeText(getApplicationContext(), "Submitted", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setAttributes(lp);
+    }
+
     /**
      * Function for OnClick Event
      **/
@@ -787,6 +838,10 @@ public class Profile extends AppCompatActivity implements View.OnClickListener {
                     startActivity(k);
                 }
                 break;
+            case R.id.ratings:
+                showRatingDialog();
+                break;
+
         }
     }
 }
